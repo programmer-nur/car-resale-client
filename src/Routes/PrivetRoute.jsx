@@ -1,9 +1,9 @@
-import React from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+// import React from 'react';
+// import { useLocation, useNavigate } from 'react-router-dom';
 
 const PrivetRoute = ({children}) => {
-    const navigate=useNavigate()
-    const location = useLocation()
+    // const navigate=useNavigate()
+    // const location = useLocation()
 
 
 

@@ -1,9 +1,9 @@
 import React from 'react';
 
-const CarItem = ({car}) => {
+const CarItem = ({car,setModalCars}) => {
     const {name,img,resaleprice,orginalprice,location,condition,time}=car
     return (
-        <div className="card card-compact w-96 bg-base-700 shadow-xl">
+        <div className="card card-compact  bg-base-700 shadow-xl">
         <figure><img className='md:w-full' src={img} alt="Shoes" /></figure>
         <div className="card-body">
           <h2 className="card-title text-left">{name}</h2>
@@ -14,9 +14,13 @@ const CarItem = ({car}) => {
           <p><span className='text-lg font-medium'>Used:</span> {condition} Year</p>
           <p><span className='text-lg font-medium'>Post:</span> {time}</p>
          </div>
-          <div className="card-actions justify-end">
-            <button className="btn w-full btn-primary">Buy Now</button>
-          </div>
+
+         <div className="card-actions justify-end">
+          <label htmlFor="booking-modal"
+           className="btn text-white btn-primary"
+           onClick={()=>setModalCars(car)}
+           >purchase</label>
+        </div>
         </div>
       </div>
     );

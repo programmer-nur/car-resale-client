@@ -1,5 +1,6 @@
 import CarItems from "../Pages/Home/CarItems";
 import Categories from "../Pages/Home/Categories";
+import PurchechModal from "../Pages/Home/PurchechModal";
 import Login from "../Pages/Login/Login";
 import Signup from "../Pages/Login/Signup";
 

@@ -1,10 +1,11 @@
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { AuthContext } from '../../Context/AuthProvider';
 
 const Login = () => {
-  const{user,createUserGoogle,logIn}=useContext(AuthContext)
+  const{createUserGoogle,logIn}=useContext(AuthContext)
   const [error,setError]=useState('')
     const {
         register,
@@ -20,6 +21,7 @@ const Login = () => {
         .then(res=>{
           const user=res.user
           setError('')
+          toast.success('Login Successfully')
           console.log(user)
         })
         .catch(err=>{
@@ -28,7 +30,9 @@ const Login = () => {
       }
   const   handelGoogleIn =()=>{
     createUserGoogle()
-    .then(()=>{})
+    .then(()=>{
+      toast.success('Login Successfully')
+    })
     }
     return (
         <section 
