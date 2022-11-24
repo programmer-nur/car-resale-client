@@ -1,5 +1,7 @@
 import CarItems from "../Pages/Home/CarItems";
 import Categories from "../Pages/Home/Categories";
+import Login from "../Pages/Login/Login";
+import Signup from "../Pages/Login/Signup";
 
 const { createBrowserRouter } = require("react-router-dom");
 const { default: Main } = require("../Layout/Main");
@@ -22,6 +24,14 @@ const router = createBrowserRouter([
                 path:'/categories/:id',
                 loader:({params})=>fetch(`http://localhost:5000/categories${params.id}`),
                 element:<CarItems/>
+            },
+            {
+                path:'/login',
+                element:<Login/>
+            },
+            {
+                path:'/signup',
+                element:<Signup/>
             }
         ]
     }

@@ -1,5 +1,6 @@
 import React from 'react';
 import Typewriter from 'typewriter-effect';
+import BtnPrimary from '../../Utilities/BtnPrimary';
 
 const Banner = () => {
     return (
@@ -23,7 +24,7 @@ const Banner = () => {
                 }}
               />
             </h1>
-            <button className="btn btn-primary">Explore Now</button>
+           <BtnPrimary>Explore Now</BtnPrimary>
           </div>
         </div>
       </div>
