@@ -4,12 +4,10 @@ const OrderDetails = ({ order }) => {
   const {
     address,
     contact,
-    customer,
+    email,
     customerName,
     productName,
-    quantity,
-    price,
-    shouldPay,
+    productPrice,
   } = order;
 
   return (
@@ -38,7 +36,7 @@ const OrderDetails = ({ order }) => {
                   <span className="text-sm font-bold">Email</span>
                 </td>
                 <td>
-                  <span className="text-sm">: {customer}</span>
+                  <span className="text-sm">: {email}</span>
                 </td>
               </tr>
               <tr>
@@ -74,28 +72,13 @@ const OrderDetails = ({ order }) => {
                   <span className="text-sm">: {productName}</span>
                 </td>
               </tr>
+    
               <tr>
                 <td>
-                  <span className="text-sm font-bold">Quantity</span>
+                  <span className="text-sm font-bold">Price</span>
                 </td>
                 <td>
-                  <span className="text-sm">: {quantity}</span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <span className="text-sm font-bold">Price/per unit</span>
-                </td>
-                <td>
-                  <span className="text-sm">: {price}</span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <span className="text-sm font-bold">Please Pay</span>
-                </td>
-                <td>
-                  <span className="text-sm">: {shouldPay}</span>
+                  <span className="text-sm">: {productPrice}</span>
                 </td>
               </tr>
             </tbody>

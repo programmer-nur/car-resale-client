@@ -5,6 +5,7 @@ import { AuthContext } from '../../Context/AuthProvider';
 
 const MyOrders = () => {
     const {user}=useContext(AuthContext)
+    console.log(user);
     const {data:orders}=useQuery({
         queryKey:['orders'],
         queryFn:async()=>{
@@ -15,8 +16,8 @@ const MyOrders = () => {
         }
     })
     return (
-        <div>
-            <h3 className="text-3xl">My Orders</h3>
+        <div className='m-3'>
+            <h3 className="text-3xl mb-2">My Orders</h3>
       <div className="overflow-x-auto">
       <div className="overflow-x-auto w-full">
   <table className="table w-full">
@@ -35,7 +36,7 @@ const MyOrders = () => {
     </thead>
     <tbody>
       {
-        orders?.map((order,i)=><tr>
+        orders?.map((order,i)=><tr key={i}>
             <th>
               <label>
                     <span>{i+1}</span>

@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import toast from "react-hot-toast";
 import { AuthContext } from '../../Context/AuthProvider';
 
 const PurchechModal = ({modalCars}) => {
@@ -25,7 +26,9 @@ const PurchechModal = ({modalCars}) => {
     })
     .then(res=>res.json())
     .then(data=>{
-      console.log(data)
+      if(data.acknowledged){
+        toast('Order Added')
+      }
     })
     console.log(order);
   }

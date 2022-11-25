@@ -4,7 +4,7 @@ const CarItem = ({car,setModalCars}) => {
     const {name,img,resaleprice,orginalprice,location,condition,time}=car
     return (
         <div className="card card-compact  bg-base-700 shadow-xl">
-        <figure><img className='md:w-full' src={img} alt="Shoes" /></figure>
+        <figure><img className='md:w-full' src={img} alt={name} /></figure>
         <div className="card-body">
           <h2 className="card-title text-left">{name}</h2>
          <div className='text-left'>

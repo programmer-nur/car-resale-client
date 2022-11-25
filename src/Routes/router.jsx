@@ -7,6 +7,8 @@ import CarItems from "../Pages/Home/CarItems";
 import Categories from "../Pages/Home/Categories";
 import Login from "../Pages/Login/Login";
 import Signup from "../Pages/Login/Signup";
+import Payment from "../Pages/Dashboard/Payment";
+import PrivetRoute from "./PrivetRoute";
 
 const { createBrowserRouter } = require("react-router-dom");
 const { default: Main } = require("../Layout/Main");
@@ -28,7 +30,7 @@ const router = createBrowserRouter([
             {
                 path:'/categories/:id',
                 loader:({params})=>fetch(`http://localhost:5000/categories${params.id}`),
-                element:<CarItems/>
+                element:<PrivetRoute><CarItems/></PrivetRoute>
             },
             {
                 path:'/login',
@@ -44,11 +46,11 @@ const router = createBrowserRouter([
         
             path:'/dashboard',
         
-            element:<DashboardLayout/>,
+            element:<PrivetRoute><DashboardLayout/></PrivetRoute>,
             children:[
                 {
                     path:'/dashboard',
-                    element:<MyOrders/>
+                    element:<PrivetRoute><MyOrders/></PrivetRoute>
                 },
                 {
                     path:'/dashboard/allsealer',
@@ -64,7 +66,7 @@ const router = createBrowserRouter([
                 },
                 {
                     path:'/dashboard/payment/:id',
-                    loader:({params})=> fetch(`https://doctor-portal-server-orpin.vercel.app/bookings/${params.id}`),
+                    loader:({params})=> fetch(`http://localhost:5000/orders/${params.id}`),
                     element:<Payment/>
                 },
             ]

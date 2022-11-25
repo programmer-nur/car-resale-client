@@ -23,10 +23,9 @@ const Categories = () => {
             {
                 categories.map((category,i)=><div key={i} className="card shadow-lg image-full">
                 <figure><img src={category.img} alt="Shoes" /></figure>
-                <div className="card-body">
+                <div className="card-body relative">
                   <h2 className="card-title text-white">{category.category}</h2>
-                  <p>If a dog chews shoes whose shoes does he choose?</p>
-                  <div className="card-actions justify-end">
+                  <div className="card-actions absolute right-4 bottom-3 justify-end">
                    <BtnPrimary><Link to={`/categories/${category.id}`}>More</Link></BtnPrimary>
                   </div>
                 </div>

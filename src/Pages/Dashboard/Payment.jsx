@@ -11,7 +11,8 @@ const stripePromise = loadStripe(
 );
 
 const Payment = () => {
-    const order = useLoaderData();
+    const order = useLoaderData([]);
+    console.log(order);
     const navigation = useNavigation()
 
   if (navigation.state === 'loading') {
