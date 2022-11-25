@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthProvider";
 const Signup = () => {
@@ -19,8 +20,12 @@ const Signup = () => {
         displayName: data.name
       }
       updateUser(userInfo)
-      .then(()=>{})
+      .then(()=>{
+        saveMongodbUser(data.name,data.email,data.opinion)
+        toast('User Create Successfully')
+      })
       .catch(err=>{
+
         setError(err.message)
       })
       console.log(user);
@@ -29,11 +34,29 @@ const Signup = () => {
 
   const handelGoogleIn = () => {
     createUserGoogle()
-    .then(()=>{})
+    .then(()=>{
+      toast.success('User Create Successfully')
+    })
     .catch(err=>{
       setError(err.message)
     })
   };
+
+  const saveMongodbUser = (name,email,opinion)=>{
+    const user ={name,email,opinion}
+    fetch(`http://localhost:5000/users`,{
+      method:'POST',
+      headers:{
+        'content-type':'application/json'
+      },
+      body:JSON.stringify(user)
+    })
+    .then(res=>res.json())
+    .then(data=>{
+     console.log(data);
+     
+    })
+  }
   return (
     <section
       style={{

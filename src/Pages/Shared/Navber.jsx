@@ -1,18 +1,23 @@
 import React, { useContext } from 'react';
+import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
+
 import { AuthContext } from '../../Context/AuthProvider';
 
 const Navber = () => {
   const {user,logOut}=useContext(AuthContext)
   const handelLogOut=()=>{
     logOut()
-    .then(()=>{})
+    .then(()=>{
+      toast('Log Out',{autoClose:500})
+    })
   }
     const menuItems=(
         <>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/categories'>Categories</Link></li>
         <li><Link>About</Link></li>
+        <li><Link to='/dashboard'>Dashboard</Link></li>
         {
           user?.uid?
           <li><Link onClick={handelLogOut}>SignOut</Link></li>

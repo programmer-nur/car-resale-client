@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
-import { toast } from "react-toastify";
 import { AuthContext } from "../../Context/AuthProvider";
 
 const Login = () => {
@@ -19,7 +19,7 @@ const Login = () => {
       .then((res) => {
         const user = res.user;
         setError("");
-        toast.success("Login Successfully");
+        toast("Login Successfully");
         console.log(user);
       })
       .catch((err) => {
@@ -28,7 +28,7 @@ const Login = () => {
   };
   const handelGoogleIn = () => {
     createUserGoogle().then(() => {
-      toast.success("Login Successfully");
+      toast("Login Successfully");
     });
   };
   return (

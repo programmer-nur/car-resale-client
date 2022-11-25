@@ -9,8 +9,9 @@ const PurchechModal = ({modalCars}) => {
     const order = {
       productId: modalCars._id,
       productName: modalCars.name,
+      productImg:modalCars.img,
       productPrice:modalCars.resaleprice,
-      customer:user?.email,
+      email:user?.email,
       customerName: user?.displayName,
       address: event.target.address.value,
       contact: event.target.contact.value,
