@@ -10,7 +10,6 @@ const useAdmin = (email)=>{
         })
     },[email])
     return({admin})
-
 }
 
 export default useAdmin;
