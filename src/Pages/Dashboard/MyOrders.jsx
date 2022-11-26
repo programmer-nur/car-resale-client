@@ -9,9 +9,11 @@ const MyOrders = () => {
   const { data: orders } = useQuery({
     queryKey: ["orders"],
     queryFn: async () => {
-      const res = await fetch(
-        `http://localhost:5000/orders?email=${user?.email}`
-      );
+      const res = await fetch(`http://localhost:5000/orders?email=${user?.email}`,{
+              headers:{
+                authorization:`bearer ${localStorage.getItem('token')}`
+              }
+      });
       const data = await res.json();
       console.log(data);
       return data;
@@ -37,7 +39,9 @@ const MyOrders = () => {
               </tr>
             </thead>
             <tbody>
-              {orders?.map((order, i) => (
+              {
+              orders?.length &&
+              orders?.map((order, i) => (
                 <tr key={i}>
                   <th>
                     <label>

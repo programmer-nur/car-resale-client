@@ -8,7 +8,7 @@ const AllBuyer = () => {
     const {data:buyers,refetch,isLoading}=useQuery({
         queryKey:['buyer'],
         queryFn:async()=>{
-        const res = await fetch(`http://localhost:5000/user?opinion=Buyer`)
+        const res = await fetch(`http://localhost:5000/user?role=Buyer`)
         const data =await res.json()
         return data
         }

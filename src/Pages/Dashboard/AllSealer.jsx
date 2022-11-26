@@ -12,7 +12,7 @@ const AllSealer = () => {
     queryKey: ["userSealer"],
     queryFn: async () => {
       const res = await fetch(
-        `http://localhost:5000/userSealer?opinion=Sealer`
+        `http://localhost:5000/userSealer?role=Sealer`
       );
       const data = await res.json();
       return data;
@@ -30,9 +30,32 @@ const AllSealer = () => {
         refetch();
       });
   };
+
+
+
+  
   if (isLoading) {
     <Loading />;
   }
+
+
+  const handelMakeAdmin = (_id) => {
+    fetch(`http://localhost:5000/users/admin/${_id}`, {
+      method: "PUT",
+      headers:{
+        authorization:`bearer ${localStorage.getItem('token')}`
+      }
+    })
+    .then(res=>res.json())
+    .then(data=>{
+      if(data.modifyCount){
+        toast('Make Admin Successfully')
+        refetch()
+      }
+    })
+    
+  };
+
   return (
     <div className="m-4">
       <h3 className="text-3xl">All Sealer</h3>
@@ -44,6 +67,7 @@ const AllSealer = () => {
                 <th>Sr No.</th>
                 <th>Name</th>
                 <th>Email</th>
+                <th>Admin</th>
                 <th>Action</th>
               </tr>
             </thead>
@@ -54,7 +78,13 @@ const AllSealer = () => {
                   <td>{seler?.name}</td>
                   <td>{seler?.email}</td>
                   <td>
-                    <button
+                    {
+                      <button onClick={() => handelMakeAdmin(seler?._id)} className="bg-green-500 text-white p-1 rounded-md">Make Admin</button>
+                      }
+                    
+                  </td>
+                  <td>
+                  <button
                       onClick={() => handelDeleteSealer(seler?._id)}
                       className="bg-red-500 text-white p-1 rounded-md"
                     >

@@ -1,11 +1,20 @@
 import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
-import { Link } from "react-router-dom";
+import useToken from '../../hooks/useToken'
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthProvider";
 const Signup = () => {
   const {createUser,updateUser,createUserGoogle}=useContext(AuthContext)
   const [error,setError]=useState('')
+  const navigate = useNavigate()
+  const [createEmailUser, setCreateEmailUser]=useState('')
+  const [token]=useToken(createEmailUser)
+
+
+  if(token){
+    navigate('/')
+  }
   const {
     register,
     handleSubmit,
@@ -21,7 +30,8 @@ const Signup = () => {
       }
       updateUser(userInfo)
       .then(()=>{
-        saveMongodbUser(data.name,data.email,data.opinion)
+        saveMongodbUser(data.name,data.email,data.role)
+
         toast('User Create Successfully')
       })
       .catch(err=>{
@@ -34,7 +44,9 @@ const Signup = () => {
 
   const handelGoogleIn = () => {
     createUserGoogle()
-    .then(()=>{
+    .then((res)=>{
+      const user= res.user
+      console.log(user)
       toast.success('User Create Successfully')
     })
     .catch(err=>{
@@ -42,8 +54,8 @@ const Signup = () => {
     })
   };
 
-  const saveMongodbUser = (name,email,opinion)=>{
-    const user ={name,email,opinion}
+  const saveMongodbUser = (name,email,role)=>{
+    const user ={name,email,role}
     fetch(`http://localhost:5000/users`,{
       method:'POST',
       headers:{
@@ -53,10 +65,11 @@ const Signup = () => {
     })
     .then(res=>res.json())
     .then(data=>{
-     console.log(data);
+      setCreateEmailUser(email)
      
     })
   }
+
   return (
     <section
       style={{
@@ -89,7 +102,7 @@ const Signup = () => {
               </label>
             
 
-              <select  {...register("opinion")} className="select select-bordered w-full max-w-xs">
+              <select  {...register("role")} className="select select-bordered w-full max-w-xs">
                 <option hidden selected>
                   Buyer/Sealer ?
                 </option>

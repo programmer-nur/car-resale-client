@@ -9,6 +9,7 @@ import Login from "../Pages/Login/Login";
 import Signup from "../Pages/Login/Signup";
 import Payment from "../Pages/Dashboard/Payment";
 import PrivetRoute from "./PrivetRoute";
+import ErrorPage from "../Pages/Shared/ErrorPage";
 
 const { createBrowserRouter } = require("react-router-dom");
 const { default: Main } = require("../Layout/Main");
@@ -17,6 +18,7 @@ const { default: Home } = require("../Pages/Home/Home");
 const router = createBrowserRouter([
     {
         path:'/',
+        errorElement:<ErrorPage/>,
         element:<Main/>,
         children:[
             {
@@ -45,7 +47,7 @@ const router = createBrowserRouter([
     {
         
             path:'/dashboard',
-        
+            errorElement:<ErrorPage/>,
             element:<PrivetRoute><DashboardLayout/></PrivetRoute>,
             children:[
                 {
