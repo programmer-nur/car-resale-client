@@ -14,6 +14,7 @@ import AllUsers from "../Pages/Dashboard/AllUsers";
 import MyProfile from "../Pages/Dashboard/MyProfile";
 import MyProducts from "../Pages/Dashboard/MyProducts";
 import ReportedItem from "../Pages/Dashboard/ReportedItem";
+import About from "../Pages/Home/About";
 
 const { createBrowserRouter } = require("react-router-dom");
 const { default: Main } = require("../Layout/Main");
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
                 path:'/categories/:id',
                 loader:({params})=>fetch(`http://localhost:5000/categories${params.id}`),
                 element:<PrivetRoute><CarItems/></PrivetRoute>
+            },
+            {
+                path:'/about',
+                element:<About/>
             },
             {
                 path:'/login',

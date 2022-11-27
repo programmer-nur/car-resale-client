@@ -20,7 +20,7 @@ const Navber = () => {
         <Link to="/categories">Categories</Link>
       </li>
       <li>
-        <Link>About</Link>
+        <Link to='/about'>About</Link>
       </li>
       {user?.uid ? (
         <>
@@ -69,7 +69,7 @@ const Navber = () => {
             </ul>
           </div>
           <Link to="/" className="btn btn-ghost normal-case text-xl">
-            Cars Seal
+            <span className="text-orange-600">NM</span><p>CARMART</p>
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">

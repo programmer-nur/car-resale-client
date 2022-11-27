@@ -2,44 +2,24 @@ import React from "react";
 
 const Supports = () => {
   return (
-    <section className="container my-9 bg-slate-300 w-full mx-auto">
+    <section className="container my-9  w-full mx-auto">
         <div className="grid md:grid-cols-4  p-6">
-        <div className=" flex">
-        <div className="w-24 rounded-full">
-          <img className="rounded-full" alt="/" src="https://i.ibb.co/XF0wVPw/pngtree-cargo-business-shipping-png-image-785606.jpg" />
+        <div className="flex flex-col justify-center items-center">
+          <img className="h-40 w-40" src="https://i.ibb.co/G5ccdL5/Integrity-300x300-1.png" alt="" />
+            <h1 className="text-4xl">Integrity</h1>
         </div>
-        <div className="my-auto ml-4">
-            <h3 className="text-lg font-semibold">FREE SHIPPING</h3>
-            <p>On all orders over $99.00</p>
+        <div className="flex flex-col justify-center items-center">
+          <img className="h-40 w-40" src="https://i.ibb.co/pK329Yc/Respect-300x300-1.png" alt="" />
+            <h1 className="text-4xl">Respect</h1>
         </div>
-      </div>
-        <div className=" flex">
-        <div className="w-24 rounded-full">
-          <img className="rounded-full" alt="/" src="https://i.ibb.co/X3DtgBK/pngtree-returning-visitor-digital-marketing-png-image-1655549.jpg" />
+        <div className="flex flex-col justify-center items-center">
+          <img className="h-40 w-40" src="https://i.ibb.co/prSskht/Compassion-300x300-1.png" alt="" />
+            <h1 className="text-4xl">Compassion</h1>
         </div>
-        <div className="my-auto ml-4">
-            <h3 className="text-lg font-semibold">30 DAYS RETURN</h3>
-            <p>You have 30 days to return</p>
+        <div className="flex flex-col justify-center items-center">
+          <img className="h-40 w-40" src="https://i.ibb.co/dBCyrp1/Excellence-300x300-1.png" alt="" />
+            <h1 className="text-4xl">Excellence</h1>
         </div>
-      </div>
-        <div className=" flex">
-        <div className="w-24 rounded-full">
-          <img className="rounded-full" alt="/" src="https://i.ibb.co/nPMqknV/pngtree-safe-shop-logo-designs-secure-store-logo-vector-image-341567.jpg" />
-        </div>
-        <div className="my-auto ml-4">
-            <h3 className="text-lg font-semibold">SAFE SHOPPING</h3>
-            <p>Payment 100% secure</p>
-        </div>
-      </div>
-        <div className=" flex">
-        <div className="w-24 rounded-full">
-          <img className="rounded-full h-full" alt="/" src="https://i.ibb.co/Rc1RqXh/pngtree-avatar-support-man-headphone-blue-icon-on-abstract-cloud-back-png-image-1646537.jpg" />
-        </div>
-        <div className="my-auto ml-4">
-            <h3 className="text-lg font-semibold">ONLINE SUPPORT</h3>
-            <p>Contact us 24 hours a day</p>
-        </div>
-      </div>
         </div>
     </section>
   );

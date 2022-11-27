@@ -18,8 +18,9 @@ const Categories = () => {
    }
     return (
         <section className='container w-full mx-auto'>
-            <h2 className="text-3xl my-4">Categories</h2>
-            <div className='grid md:grid-cols-3 gap-6'>
+            <h2 className="text-4xl mx-3 font-semibold my-4">Categories</h2>
+            
+            <div className='grid mx-3 md:grid-cols-3 gap-6'>
             {
                 categories.map((category,i)=><div key={i} className="card shadow-lg image-full">
                 <figure><img src={category.img} alt="Shoes" /></figure>
