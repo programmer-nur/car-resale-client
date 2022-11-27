@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
-import { toast } from "react-toastify";
 
-const CheckOutForm = ({ payForTool }) => {
+const CheckOutForm = ({ order}) => {
   const stripe = useStripe();
   const elements = useElements();
   const [clientSecret, setClientSecret] = useState("");
@@ -11,29 +10,30 @@ const CheckOutForm = ({ payForTool }) => {
   const [transactionId, setTransactionId] = useState("");
   const [processing, setProcessing] = useState(false);
 
-  const { _id, shouldPay, customerName, customer } = payForTool || "";
+  const { _id, productName,productPrice,email,customerName } = order
 
   useEffect(() => {
-    fetch("https://infinite-basin-98544.herokuapp.com/create-payment-intent", {
+    fetch("http://localhost:5000/create-payment-intent", {
       method: "POST",
       headers: {
         "content-type": "application/json",
-        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        authorization: `bearer ${localStorage.getItem("token")}`,
       },
-      body: JSON.stringify({ shouldPay }),
+      body: JSON.stringify({ productPrice }),
     })
       .then((res) => res.json())
       .then((data) => {
+        console.log(data);
         if (data?.clientSecret) {
           setClientSecret(data.clientSecret);
         }
       });
-  }, [shouldPay]);
+  }, [productPrice]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    if (!stripe || !elements) {
+    if (!stripe || !elements || processing) {
       return;
     }
 
@@ -58,7 +58,7 @@ const CheckOutForm = ({ payForTool }) => {
           card: card,
           billing_details: {
             name: customerName,
-            email: customer,
+            email: email,
           },
         },
       });
@@ -71,30 +71,36 @@ const CheckOutForm = ({ payForTool }) => {
       setSuccess("Congratulations! Your payment has been successful");
       setTransactionId(paymentIntent.id);
     }
+if(paymentIntent.status === 'succeeded'){
+  const payment = {
+    orderId: _id,
+    transactionId: paymentIntent.id,
+    customerName: customerName,
+    productName:productName,
+    price:productPrice
+  };
 
-    // store payment on database
-    const payment = {
-      order: _id,
-      transactionId: paymentIntent.id,
-      customer: customer,
-      customerName: customerName,
-    };
-
-    fetch(`https://infinite-basin-98544.herokuapp.com/orders/${_id}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-      },
-      body: JSON.stringify(payment),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        toast.success(
-          "Transaction successful. Your order status has been updated. Visit my orders page"
-        );
+  fetch(`http://localhost:5000/payments`, {
+    method: "POST",
+    headers: {
+      "content-type": "application/json",
+      authorization: `bearer ${localStorage.getItem("accessToken")}`,
+    },
+    body: JSON.stringify(payment),
+  })
+    .then((res) => res.json())
+    .then((data) => {
+     
+      console.log(data.insertedId);
+      if (data.insertedId) {
+        setSuccess("Congrats! your payment completed");
+        setTransactionId(paymentIntent.id);
         setProcessing(false);
-      });
+      }
+    });
+}
+    // store payment on database
+   
   };
 
   return (
@@ -124,22 +130,13 @@ const CheckOutForm = ({ payForTool }) => {
           Pay
         </button>
       </form>
-      {processing && (
-        <div className="text-center">
-          <div className="w-16 h-16 border-t-4 border-b-4 border-accent rounded-full animate-spin"></div>
-        </div>
-      )}
-      {cardError && (
-        <div>
-          <p className="text-red-600">{cardError}</p>
-        </div>
-      )}
+      <p className="text-red-600">{cardError}</p>
       {success && (
         <div>
-          <p className="text-success">{success}</p>
+          <p className="text-green-500">{success}</p>
           <p>
-            TransactionId :{" "}
-            <span className="font-semibold text-primary">{transactionId}</span>
+            Your transaction id:
+            <span className="font-bold">{transactionId}</span>{" "}
           </p>
         </div>
       )}

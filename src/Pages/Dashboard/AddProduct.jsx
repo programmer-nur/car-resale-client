@@ -1,12 +1,13 @@
 import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthProvider";
 
 const AddProduct = () => {
   const { user } = useContext(AuthContext);
   const [time, setTime] = useState(new Date().toISOString().slice(0, 10));
-
+  const navigate = useNavigate()
   const {
     handleSubmit,
     formState: { errors },
@@ -55,6 +56,7 @@ const AddProduct = () => {
               if (data.acknowledged) {
                 setTime()
                 toast.success(`Order is added successfully`);
+                navigate('/dashboard/myproduct')
               }
             });
         }

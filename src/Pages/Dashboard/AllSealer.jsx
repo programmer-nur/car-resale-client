@@ -15,7 +15,6 @@ const AllSealer = () => {
         `http://localhost:5000/userSealer?role=Sealer`
       );
       const data = await res.json();
-      console.log(data)
       return data;
     },
   });
@@ -33,7 +32,7 @@ const AllSealer = () => {
   };
 
   const handelVerifyied = id=>{
-    fetch(`http://localhost:5000/users/admin/${id}`, {
+    fetch(`http://localhost:5000/users/verify/${id}`, {
       method: 'PUT', 
       headers: {
           authorization:`bearer ${localStorage.getItem('token')}`
@@ -43,6 +42,7 @@ const AllSealer = () => {
   
   .then(res => res.json())
   .then(data => {
+    console.log(data)
       if(data.modifiedCount > 0){
           toast.success('Make admin successful.')
           refetch();

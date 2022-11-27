@@ -6,9 +6,7 @@ import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import CheckOutForm from "./CheckOutForm";
 
-const stripePromise = loadStripe(
-  "pk_test_51L0k3pBXb2oMSwoOsHqTSof6vAX4IAro7WMoVRpsdMsqRPZrehiaEZWObsFHZKvEkuvTGaeWLNaEYSpmGbPH1d8P00R4yJVRYn"
-);
+const stripePromise = loadStripe('pk_test_51M6C1HCTDXJg3zMmSYAsCQUtGUwLbIY1sCKbKe7eitY2RSZJAc2ABgIsYzy9MXssf5MduoDcmzZFZUzbb1GgbDel001eFdiCjw');
 
 const Payment = () => {
     const order = useLoaderData([]);

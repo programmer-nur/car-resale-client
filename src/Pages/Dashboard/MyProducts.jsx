@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext} from 'react';
 import toast from 'react-hot-toast';
 import { AuthContext } from '../../Context/AuthProvider';
 import Loading from '../Shared/Loading';
@@ -14,7 +14,7 @@ const MyProducts = () => {
         const res =await fetch(`http://localhost:5000/myCars?email=${user?.email}`, {
             method:'GET',
           headers: {
-            authorization: `Bearer ${localStorage.getItem("token")}`,
+            authorization: `bearer ${localStorage.getItem("token")}`,
           },
         })
         const data= await res.json()

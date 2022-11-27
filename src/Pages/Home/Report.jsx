@@ -6,7 +6,8 @@ const Report = ({report}) => {
   const { user } = useContext(AuthContext);
   const handleSubmit = (event) =>{
     event.preventDefault()
-    const  text = event.target.message.value
+    const form = event.target;
+    const  text = form.message.value
 
     const reportItem={
       userName:user?.displayName,
@@ -15,7 +16,7 @@ const Report = ({report}) => {
       reportId:report._id
     }
     fetch('http://localhost:5000/report',{
-      method:'GET',
+      method:'post',
       headers:{
         'content-type':'application/json'
       },
@@ -23,7 +24,9 @@ const Report = ({report}) => {
     })
     .then(res=>res.json())
     .then(data=>{
+      toast('Report Successfully')
       console.log(data);
+      form.reset()
     })
     console.log(reportItem)
   };
