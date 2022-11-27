@@ -38,11 +38,31 @@ const Login = () => {
       });
   };
   const handelGoogleIn = () => {
+    const role = 'Buyer'
     createUserGoogle().then((res) => {
+      const user = res.user;
       console.log(res.user);
+      saveMongodbUser(user?.displayName,user.email,role)
       toast("Login Successfully");
     });
   };
+
+  const saveMongodbUser = (name,email,role)=>{
+    const user ={name,email,role}
+    fetch(`http://localhost:5000/users`,{
+      method:'POST',
+      headers:{
+        'content-type':'application/json'
+      },
+      body:JSON.stringify(user)
+    })
+    .then(res=>res.json())
+    .then(data=>{
+      console.log(data);
+      setLoginUserEmail(email)
+     
+    })
+  }
   return (
     <section
       style={{

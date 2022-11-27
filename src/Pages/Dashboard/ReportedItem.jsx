@@ -26,7 +26,7 @@ const ReportedItem = () => {
         reports.map(report=> <tr key={report._id}>
             <th></th>
             <td>{report.name}</td>
-            <td>Quality Control Specialist</td>
+            <td>{report.email}</td>
             <td>Blue</td>
           </tr>)
      }

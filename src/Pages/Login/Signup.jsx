@@ -43,10 +43,11 @@ const Signup = () => {
   };
 
   const handelGoogleIn = () => {
+    const role = 'Buyer'
     createUserGoogle()
     .then((res)=>{
       const user= res.user
-      console.log(user)
+      saveMongodbUser(user?.displayName,user?.email,role)
       toast.success('User Create Successfully')
     })
     .catch(err=>{
@@ -65,6 +66,7 @@ const Signup = () => {
     })
     .then(res=>res.json())
     .then(data=>{
+      console.log(data);
       setCreateEmailUser(email)
      
     })
