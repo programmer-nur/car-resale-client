@@ -15,6 +15,7 @@ const AllSealer = () => {
         `http://localhost:5000/userSealer?role=Sealer`
       );
       const data = await res.json();
+      console.log(data)
       return data;
     },
   });
@@ -31,30 +32,29 @@ const AllSealer = () => {
       });
   };
 
+  const handelVerifyied = id=>{
+    fetch(`http://localhost:5000/users/admin/${id}`, {
+      method: 'PUT', 
+      headers: {
+          authorization:`bearer ${localStorage.getItem('token')}`
+      }
+  })
 
+  
+  .then(res => res.json())
+  .then(data => {
+      if(data.modifiedCount > 0){
+          toast.success('Make admin successful.')
+          refetch();
+      }
+  })
+  }
 
   
   if (isLoading) {
     <Loading />;
   }
 
-
-  const handelMakeAdmin = (_id) => {
-    fetch(`http://localhost:5000/users/admin/${_id}`, {
-      method: "PUT",
-      headers:{
-        authorization:`bearer ${localStorage.getItem('token')}`
-      }
-    })
-    .then(res=>res.json())
-    .then(data=>{
-      if(data.modifyCount){
-        toast('Make Admin Successfully')
-        refetch()
-      }
-    })
-    
-  };
 
   return (
     <div className="m-4">
@@ -67,7 +67,6 @@ const AllSealer = () => {
                 <th>Sr No.</th>
                 <th>Name</th>
                 <th>Email</th>
-                <th>Admin</th>
                 <th>Action</th>
               </tr>
             </thead>
@@ -79,9 +78,9 @@ const AllSealer = () => {
                   <td>{seler?.email}</td>
                   <td>
                     {
-                      <button onClick={() => handelMakeAdmin(seler?._id)} className="bg-green-500 text-white p-1 rounded-md">Make Admin</button>
-                      }
-                    
+
+<td>{seler?.role !== 'verify' && <button onClick={()=>handelVerifyied(seler?._id)} className='btn btn-xs btn-primary'>Verify</button>}</td>
+                    }
                   </td>
                   <td>
                   <button

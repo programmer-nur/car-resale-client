@@ -10,6 +10,9 @@ import Signup from "../Pages/Login/Signup";
 import Payment from "../Pages/Dashboard/Payment";
 import PrivetRoute from "./PrivetRoute";
 import ErrorPage from "../Pages/Shared/ErrorPage";
+import AllUsers from "../Pages/Dashboard/AllUsers";
+import MyProfile from "../Pages/Dashboard/MyProfile";
+import MyProducts from "../Pages/Dashboard/MyProducts";
 
 const { createBrowserRouter } = require("react-router-dom");
 const { default: Main } = require("../Layout/Main");
@@ -52,19 +55,31 @@ const router = createBrowserRouter([
             children:[
                 {
                     path:'/dashboard',
+                    element:<PrivetRoute><MyProfile/></PrivetRoute>
+                },
+                {
+                    path:'/dashboard/alluser',
+                    element:<PrivetRoute><AllUsers/></PrivetRoute>
+                },
+                {
+                    path:'/dashboard/myproduct',
+                    element:<PrivetRoute><MyProducts/></PrivetRoute>
+                },
+                {
+                    path:'/dashboard/order',
                     element:<PrivetRoute><MyOrders/></PrivetRoute>
                 },
                 {
                     path:'/dashboard/allsealer',
-                    element:<AllSealer/>
+                    element:<PrivetRoute><AllSealer/></PrivetRoute>
                 },
                 {
                     path:'/dashboard/addproduct',
-                    element:<AddProducts/>
+                    element:<PrivetRoute><AddProducts/></PrivetRoute>
                 },
                 {
                     path:'/dashboard/allbuyer',
-                    element:<AllBuyer/>
+                    element:<PrivetRoute><AllBuyer/></PrivetRoute>
                 },
                 {
                     path:'/dashboard/payment/:id',
