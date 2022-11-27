@@ -132,13 +132,16 @@ const PurchechModal = ({ modalCars }) => {
                       placeholder="Your Contact No"
                       className="input rounded-md w-full max-w-xs"
                     />
-                   <div className="modal-action">
-                   <label ><input htmlFor="booking-modal"
-                      className="btn btn-primary w-full rounded-full text-white max-w-xs block my-4"
-                      type="submit"
-                      value="Order Now"
-                    /></label>
-                   </div>
+                    <div className="modal-action">
+                      <label>
+                        <input
+                          htmlFor="booking-modal"
+                          className="btn btn-primary w-full rounded-full text-white max-w-xs block my-4"
+                          type="submit"
+                          value="Order Now"
+                        />
+                      </label>
+                    </div>
                   </div>
                 </form>
               </div>
