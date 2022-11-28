@@ -1,8 +1,9 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
-
+import toast from 'react-hot-toast';
+import Loading from '../Shared/Loading'
 const ReportedItem = () => {
-    const {data:reports}=useQuery({
+    const {data:reports,refetch,isLoading}=useQuery({
         queryKey:['report'],
         queryFn:async()=>{
             const res=await fetch(`http://localhost:5000/reports`)
@@ -11,6 +12,25 @@ const ReportedItem = () => {
             return data;
         }
     })
+    
+    const handelDeleting =(id)=>{
+      fetch(`http://localhost:5000/cars/${id}`,{
+        method:'DELETE',
+        headers:{
+          authorization:`bearer ${localStorage.getItem('token')}`
+        }
+      })
+      .then(res=>res.json())
+      .then(data=>{
+       if(data.deletedCount){
+         refetch()
+        toast.success('Delete Product from card Successfully')
+       }
+      })
+    }
+    if (isLoading) {
+      <Loading/>
+    }
     return (
         <div className="overflow-x-auto">
   <table className="table w-full">
@@ -29,7 +49,7 @@ const ReportedItem = () => {
             <th>{report.productName}</th>
             <td>{report.email}</td>
             <td>
-              <button className='btn btn-accent max-w-xs'>Delete</button>
+              <button onClick={()=>handelDeleting(report.reportId)} className='btn btn-accent max-w-xs'>Delete</button>
             </td>
           </tr>)
      }

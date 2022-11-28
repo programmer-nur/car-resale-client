@@ -2,11 +2,12 @@ import { useQuery } from "@tanstack/react-query";
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthProvider";
+import Loading from "../Shared/Loading";
 
 const MyOrders = () => {
   const { user } = useContext(AuthContext);
   console.log(user);
-  const { data: orders } = useQuery({
+  const { data: orders,isLoading } = useQuery({
     queryKey: ["orders"],
     queryFn: async () => {
       const res = await fetch(`http://localhost:5000/orders?email=${user?.email}`,{
@@ -19,6 +20,9 @@ const MyOrders = () => {
       return data;
     },
   });
+  if(isLoading){
+    <Loading/>
+  }
   return (
     <div className="m-3">
       <h3 className="text-3xl mb-2">My Orders</h3>

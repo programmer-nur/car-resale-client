@@ -1,6 +1,6 @@
 import React from 'react';
 
-const MyProductsRow = ({product,handelDeleting}) => {
+const MyProductsRow = ({product,handelAddv,handelDeleting}) => {
     const {name,resaleprice,_id,img}=product
     return (
         <div className="max-w-xs rounded-md shadow-md bg-gray-900 text-gray-100">
@@ -10,7 +10,10 @@ const MyProductsRow = ({product,handelDeleting}) => {
 			<h2 className="text-2xl font-semibold tracking-wide">{name}</h2>
 			<p className="text-gray-100">ReSale Price ${resaleprice}</p>
 		</div>
+		<div className='flex justify-center'>
+		<button onClick={()=>handelAddv(product)} type="button" className="flex items-center justify-center mr-1 w-full p-3 font-semibold tracking-wide rounded-md bg-violet-400 text-gray-900">Addva</button>
 		<button onClick={()=>handelDeleting(_id)} type="button" className="flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md bg-violet-400 text-gray-900">Delete</button>
+		</div>
 	</div>
 </div>
     );

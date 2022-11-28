@@ -40,7 +40,7 @@ const AddProduct = () => {
             img:imgData.data.url,
             time,
         }
-       
+      
           console.log(newProduct);
           fetch(`http://localhost:5000/cars`, {
             method: "POST",

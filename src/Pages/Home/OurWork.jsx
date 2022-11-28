@@ -3,7 +3,7 @@ import VisibilitySensor from "react-visibility-sensor";
 import CountUp from "react-countup";
 const OurWork = () => {
     return (
-        <section className="p-6 my-6 text-gray-100">
+        <section className="p-6 my-9 text-gray-100">
             <h3 className='text-center text-black text-5xl mb-8'>What We Do</h3>
 	<div className="container grid grid-cols-1 gap-6 mx-auto sm:grid-cols-2 xl:grid-cols-4">
         

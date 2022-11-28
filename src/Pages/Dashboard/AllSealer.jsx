@@ -11,9 +11,7 @@ const AllSealer = () => {
   } = useQuery({
     queryKey: ["userSealer"],
     queryFn: async () => {
-      const res = await fetch(
-        `http://localhost:5000/userSealer?role=Sealer`
-      );
+      const res = await fetch(`http://localhost:5000/userSealer?role=Sealer`);
       const data = await res.json();
       return data;
     },
@@ -31,30 +29,26 @@ const AllSealer = () => {
       });
   };
 
-  const handelVerifyied = id=>{
+  const handelVerifyied = (id) => {
     fetch(`http://localhost:5000/users/verify/${id}`, {
-      method: 'PUT', 
+      method: "PUT",
       headers: {
-          authorization:`bearer ${localStorage.getItem('token')}`
-      }
-  })
-
-  
-  .then(res => res.json())
-  .then(data => {
-    console.log(data)
-      if(data.modifiedCount > 0){
-          toast.success('Make admin successful.')
+        authorization: `bearer ${localStorage.getItem("token")}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.modifiedCount > 0) {
+          toast.success("Make admin successful.");
           refetch();
-      }
-  })
-  }
+        }
+      });
+  };
 
-  
   if (isLoading) {
     <Loading />;
   }
-
 
   return (
     <div className="m-4">
@@ -78,12 +72,20 @@ const AllSealer = () => {
                   <td>{seler?.email}</td>
                   <td>
                     {
-
-<td>{seler?.role !== 'verify' && <button onClick={()=>handelVerifyied(seler?._id)} className='btn btn-xs btn-primary'>Verify</button>}</td>
+                      <td>
+                        {seler?.role !== "verify" && (
+                          <button
+                            onClick={() => handelVerifyied(seler?._id)}
+                            className="btn btn-xs btn-primary"
+                          >
+                            Verify
+                          </button>
+                        )}
+                      </td>
                     }
                   </td>
                   <td>
-                  <button
+                    <button
                       onClick={() => handelDeleteSealer(seler?._id)}
                       className="bg-red-500 text-white p-1 rounded-md"
                     >

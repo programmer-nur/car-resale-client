@@ -37,6 +37,20 @@ const MyProducts = () => {
      }
     })
   }
+  const handelAddv=(add)=>{
+    fetch(`http://localhost:5000/addv`,{
+      method:'POST',
+      headers:{
+        'content-type':'application/json'
+      },
+      body:JSON.stringify(add)
+    })
+    .then(res=>res.json())
+    .then(data=>{
+      console.log(data);
+      toast('Addv Successfully')
+    })
+  }
   if (isLoading) {
     <Loading />;
   }
@@ -49,6 +63,7 @@ const MyProducts = () => {
                 key={product._id}
                 product={product}
                 handelDeleting={handelDeleting}
+                handelAddv={handelAddv}
                 />)
             }
         </div>

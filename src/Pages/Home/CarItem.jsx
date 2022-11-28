@@ -1,8 +1,9 @@
+
 import React  from 'react';
 
 const CarItem = ({car,setModalCars,setReport}) => {
-    const {name,sealerName,img,resaleprice,orginalprice,location,condition,time}=car
-   console.log(car)
+ 
+    const {name,sealerName,img,resaleprice,originalprice,location,condition,time}=car
     return (
         <div className="card card-compact  bg-base-700 shadow-xl">
         <figure><img className='md:w-full' src={img} alt={name} /></figure>
@@ -13,7 +14,7 @@ const CarItem = ({car,setModalCars,setReport}) => {
           <p><span className='text-lg font-medium'>Sealer Name:</span> {sealerName}</p>
           <p><span className='text-lg font-medium'>Location:</span> {location}</p>
           <p><span className='text-lg font-medium'>Resale Price</span> : $ {resaleprice}</p>
-          <p><span className='text-lg font-medium'>Original Price:</span> $ {orginalprice}</p>
+          <p><span className='text-lg font-medium'>Original Price:</span> $ {originalprice}</p>
           <p><span className='text-lg font-medium'>Used:</span> {condition} Year</p>
           <p><span className='text-lg font-medium'>Post:</span> {time}</p>
          </div>
