@@ -57,7 +57,7 @@ const MyProducts = () => {
     return (
         <section className='container w-full mx-auto p-4'>
             <h2 className='text-4xl mb-4'>My Products: {products.length}</h2>
-        <div className='grid grid-cols-2 gap-3'>
+        <div className='grid md:grid-cols-2 gap-3'>
             {
                 products.map(product=><MyProductsRow
                 key={product._id}
