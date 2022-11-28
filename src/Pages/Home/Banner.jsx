@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Typewriter from 'typewriter-effect';
 import BtnPrimary from '../../Utilities/BtnPrimary';
 
@@ -8,7 +9,7 @@ const Banner = () => {
         <div className="hero-overlay bg-opacity-60"></div>
         <div className="hero-content text-center text-neutral-content">
           <div className="max-w-md">
-            <h2 className='text-2xl'>Wides Selection Of Car</h2>
+            <h2 className='text-2xl'>Worldwide Exporters</h2>
           <h1
               className="md:text-5xl text-4xl text-white font-bold text-center my-4"
               style={{
@@ -17,14 +18,14 @@ const Banner = () => {
             >
               <Typewriter
                 options={{
-                  strings: ["The Lowest Price"],
+                  strings: ["Find Your dream car"],
                   autoStart: true,
                   loop: true,
                   pauseFor: 4000,
                 }}
               />
             </h1>
-           <BtnPrimary>Explore Now</BtnPrimary>
+           <Link to='/categories'><BtnPrimary>Explore Now</BtnPrimary></Link>
           </div>
         </div>
       </div>
