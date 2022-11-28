@@ -1,9 +1,10 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import toast from "react-hot-toast";
 import { AuthContext } from "../../Context/AuthProvider";
 
 const PurchechModal = ({ modalCars }) => {
   const { user } = useContext(AuthContext);
+  
   const handleSubmit = (event) => {
     event.preventDefault();
     const order = {
@@ -138,6 +139,7 @@ const PurchechModal = ({ modalCars }) => {
                           htmlFor="booking-modal"
                           className="btn btn-primary w-full rounded-full text-white max-w-xs block my-4"
                           type="submit"
+                          
                           value="Order Now"
                         />
                       </label>
