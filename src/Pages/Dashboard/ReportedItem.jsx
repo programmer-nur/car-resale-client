@@ -6,7 +6,7 @@ const ReportedItem = () => {
     const {data:reports,refetch,isLoading}=useQuery({
         queryKey:['report'],
         queryFn:async()=>{
-            const res=await fetch(`http://localhost:5000/reports`)
+            const res=await fetch(`https://car-resale-server.vercel.app/reports`)
             const data = await res.json()
             console.log(data);
             return data;
@@ -14,7 +14,7 @@ const ReportedItem = () => {
     })
     
     const handelDeleting =(id)=>{
-      fetch(`http://localhost:5000/cars/${id}`,{
+      fetch(`https://car-resale-server.vercel.app/cars/${id}`,{
         method:'DELETE',
         headers:{
           authorization:`bearer ${localStorage.getItem('token')}`

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 const useBuyer = email=>{
     const [isBuyer, setIsBuyer]=useState(false)
     useEffect(()=>{
-        fetch(`http://localhost:5000/users/buyer/${email}`,{
+        fetch(`https://car-resale-server.vercel.app/users/buyer/${email}`,{
             method:'GET'
         })
         .then(res=>res.json())

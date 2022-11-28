@@ -11,7 +11,7 @@ const MyProducts = () => {
   const {data:products=[],refetch,isLoading}=useQuery({
     queryKey:['myCars'],
     queryFn:async()=>{
-        const res =await fetch(`http://localhost:5000/myCars?email=${user?.email}`, {
+        const res =await fetch(`https://car-resale-server.vercel.app/myCars?email=${user?.email}`, {
             method:'GET',
           headers: {
             authorization: `bearer ${localStorage.getItem("token")}`,
@@ -23,7 +23,7 @@ const MyProducts = () => {
   })
 
   const handelDeleting =(id)=>{
-    fetch(`http://localhost:5000/cars/${id}`,{
+    fetch(`https://car-resale-server.vercel.app/cars/${id}`,{
       method:'DELETE',
       headers:{
         authorization:`bearer ${localStorage.getItem('token')}`
@@ -38,7 +38,7 @@ const MyProducts = () => {
     })
   }
   const handelAddv=(add)=>{
-    fetch(`http://localhost:5000/addv`,{
+    fetch(`https://car-resale-server.vercel.app/addv`,{
       method:'POST',
       headers:{
         'content-type':'application/json'

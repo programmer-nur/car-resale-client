@@ -19,7 +19,7 @@ const PurchechModal = ({ modalCars,closeModel }) => {
       address: event.target.address.value,
       contact: event.target.contact.value,
     };
-    fetch("http://localhost:5000/orders", {
+    fetch("https://car-resale-server.vercel.app/orders", {
       method: "POST",
       headers: {
         "content-type": "application/json",

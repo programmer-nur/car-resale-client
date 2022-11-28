@@ -11,13 +11,17 @@ const AllSealer = () => {
   } = useQuery({
     queryKey: ["userSealer"],
     queryFn: async () => {
-      const res = await fetch(`http://localhost:5000/userSealer?role=Sealer`);
+      const res = await fetch(`https://car-resale-server.vercel.app/userSealer?role=Sealer`,{
+        headers:{
+          authorization: `bearer ${localStorage.getItem("token")}`,
+        }
+      });
       const data = await res.json();
       return data;
     },
   });
   const handelDeleteSealer = (_id) => {
-    fetch(`http://localhost:5000/users/${_id}`, {
+    fetch(`https://car-resale-server.vercel.app/users/${_id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -30,7 +34,7 @@ const AllSealer = () => {
   };
 
   const handelVerifyied = (id) => {
-    fetch(`http://localhost:5000/users/verify/${id}`, {
+    fetch(`https://car-resale-server.vercel.app/users/verify/${id}`, {
       method: "PUT",
       headers: {
         authorization: `bearer ${localStorage.getItem("token")}`,
@@ -73,7 +77,7 @@ const AllSealer = () => {
                   <td>
                     {
                       <td>
-                        {seler?.role !== "verify" && (
+                        {seler?.verify && (
                           <button
                             onClick={() => handelVerifyied(seler?._id)}
                             className="btn btn-xs btn-primary"

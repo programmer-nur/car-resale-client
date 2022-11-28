@@ -8,13 +8,17 @@ const AllBuyer = () => {
     const {data:buyers,refetch,isLoading}=useQuery({
         queryKey:['buyer'],
         queryFn:async()=>{
-        const res = await fetch(`http://localhost:5000/user?role=Buyer`)
+        const res = await fetch(`https://car-resale-server.vercel.app/user?role=Buyer`,{
+          headers:{
+            authorization: `bearer ${localStorage.getItem("token")}`,
+          }
+        })
         const data =await res.json()
         return data
         }
     })
     const handelDeleteBuyer= _id =>{
-        fetch(`http://localhost:5000/users/${_id}`,{
+        fetch(`https://car-resale-server.vercel.app/users/${_id}`,{
           method:'DELETE',
       
         })
