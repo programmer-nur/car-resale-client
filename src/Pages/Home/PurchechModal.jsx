@@ -1,9 +1,11 @@
-import { useContext, useState } from "react";
+import { useContext} from "react";
 import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthProvider";
 
-const PurchechModal = ({ modalCars }) => {
+const PurchechModal = ({ modalCars,closeModel }) => {
   const { user } = useContext(AuthContext);
+  const navigation =useNavigate()
   
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -27,6 +29,7 @@ const PurchechModal = ({ modalCars }) => {
       .then((res) => res.json())
       .then((data) => {
         if (data.acknowledged) {
+          navigation('/dashboard/order')
           toast("Order Added");
         }
       });
@@ -139,7 +142,7 @@ const PurchechModal = ({ modalCars }) => {
                           htmlFor="booking-modal"
                           className="btn btn-primary w-full rounded-full text-white max-w-xs block my-4"
                           type="submit"
-                          
+                          onClick={closeModel}
                           value="Order Now"
                         />
                       </label>

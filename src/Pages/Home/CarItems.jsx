@@ -9,6 +9,10 @@ const CarItems = () => {
     const cars= useLoaderData([])
    
     const [modalCars,setModalCars]=useState(null)
+    const closeModal=()=>{
+        setModalCars(null)
+    }
+
     const [report, setReport]=useState(null)
    
     return (
@@ -26,7 +30,8 @@ const CarItems = () => {
             }
         </div>
             {
-                <PurchechModal
+               modalCars&& <PurchechModal
+                closeModal={closeModal}
                 modalCars={modalCars}
                 
                 />

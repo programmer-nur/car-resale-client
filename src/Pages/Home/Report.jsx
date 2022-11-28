@@ -4,6 +4,7 @@ import { AuthContext } from "../../Context/AuthProvider";
 
 const Report = ({report}) => {
   const { user } = useContext(AuthContext);
+  console.log(report)
   const handleSubmit = (event) =>{
     event.preventDefault()
     const form = event.target;
@@ -11,6 +12,8 @@ const Report = ({report}) => {
 
     const reportItem={
       userName:user?.displayName,
+      productName:report.name,
+      price:report.resaleprice,
       email:user?.email,
       message:text,
       reportId:report._id

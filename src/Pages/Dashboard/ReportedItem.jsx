@@ -7,6 +7,7 @@ const ReportedItem = () => {
         queryFn:async()=>{
             const res=await fetch(`http://localhost:5000/reports`)
             const data = await res.json()
+            console.log(data);
             return data;
         }
     })
@@ -15,19 +16,21 @@ const ReportedItem = () => {
   <table className="table w-full">
     <thead>
       <tr>
-        <th></th>
         <th>Name</th>
         <th>Product</th>
+        <th>Email</th>
         <th>Action</th>
       </tr>
     </thead>
     <tbody>
      {
-        reports.map(report=> <tr key={report._id}>
-            <th></th>
-            <td>{report.name}</td>
+        reports?.map(report=> <tr key={report._id}>
+            <td>{report.userName}</td>
+            <th>{report.productName}</th>
             <td>{report.email}</td>
-            <td>Blue</td>
+            <td>
+              <button className='btn btn-accent max-w-xs'>Delete</button>
+            </td>
           </tr>)
      }
 

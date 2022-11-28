@@ -1,12 +1,8 @@
-import React, { useState } from 'react';
-import PurchechModal from './PurchechModal';
+import React  from 'react';
 
 const CarItem = ({car,setModalCars,setReport}) => {
     const {name,sealerName,img,resaleprice,orginalprice,location,condition,time}=car
-    const [deleteingDoctor, setDeleteingDoctors] = useState(null);
-  const closeModal =()=>{
-    setDeleteingDoctors(null)
-  }
+   console.log(car)
     return (
         <div className="card card-compact  bg-base-700 shadow-xl">
         <figure><img className='md:w-full' src={img} alt={name} /></figure>
@@ -35,10 +31,6 @@ const CarItem = ({car,setModalCars,setReport}) => {
         </div>
          
         </div>
-        <PurchechModal
-        closeModal={closeModal}
-        
-        />
       </div>
     );
 };
