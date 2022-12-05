@@ -37,7 +37,7 @@ const router = createBrowserRouter([
             },
             {
                 path:'/categories/:id',
-                loader:({params})=>fetch(`https://car-resale-server.vercel.app/categories${params.id}`),
+                loader:({params})=>fetch(`https://car-resale-server-nurmohammad83.vercel.app/categories${params.id}`),
                 element:<PrivetRoute><CarItems/></PrivetRoute>
             },
             {
@@ -98,7 +98,7 @@ const router = createBrowserRouter([
                 },
                 {
                     path:'/dashboard/payment/:id',
-                    loader:({params})=> fetch(`https://car-resale-server.vercel.app/orders/${params.id}`),
+                    loader:({params})=> fetch(`https://car-resale-server-nurmohammad83.vercel.app/orders/${params.id}`),
                     element:<Payment/>
                 },
             ]

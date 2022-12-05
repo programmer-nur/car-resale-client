@@ -18,7 +18,7 @@ const Report = ({report}) => {
       message:text,
       reportId:report._id
     }
-    fetch('https://car-resale-server.vercel.app/report',{
+    fetch('https://car-resale-server-nurmohammad83.vercel.app/report',{
       method:'post',
       headers:{
         'content-type':'application/json'

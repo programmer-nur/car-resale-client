@@ -42,7 +42,7 @@ const AddProduct = () => {
         }
       
           console.log(newProduct);
-          fetch(`https://car-resale-server.vercel.app/cars`, {
+          fetch(`https://car-resale-server-nurmohammad83.vercel.app/cars`, {
             method: "POST",
             headers: {
               "content-type": "application/json",

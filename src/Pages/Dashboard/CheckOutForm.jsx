@@ -13,7 +13,7 @@ const CheckOutForm = ({ order}) => {
   const { _id, productName,productPrice,email,customerName } = order
 
   useEffect(() => {
-    fetch("https://car-resale-server.vercel.app/create-payment-intent", {
+    fetch("https://car-resale-server-nurmohammad83.vercel.app/create-payment-intent", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -80,7 +80,7 @@ if(paymentIntent.status === 'succeeded'){
     price:productPrice
   };
 
-  fetch(`https://car-resale-server.vercel.app/payments`, {
+  fetch(`https://car-resale-server-nurmohammad83.vercel.app/payments`, {
     method: "POST",
     headers: {
       "content-type": "application/json",

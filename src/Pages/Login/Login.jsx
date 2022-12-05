@@ -49,7 +49,7 @@ const Login = () => {
 
   const saveMongodbUser = (name,email,role)=>{
     const user ={name,email,role}
-    fetch(`https://car-resale-server.vercel.app/users`,{
+    fetch(`https://car-resale-server-nurmohammad83.vercel.app/users`,{
       method:'POST',
       headers:{
         'content-type':'application/json'

@@ -8,7 +8,7 @@ const AllBuyer = () => {
     const {data:buyers,refetch,isLoading}=useQuery({
         queryKey:['buyer'],
         queryFn:async()=>{
-        const res = await fetch(`https://car-resale-server.vercel.app/user?role=Buyer`,{
+        const res = await fetch(`https://car-resale-server-nurmohammad83.vercel.app/user?role=Buyer`,{
           headers:{
             authorization: `bearer ${localStorage.getItem("token")}`,
           }
@@ -18,7 +18,7 @@ const AllBuyer = () => {
         }
     })
     const handelDeleteBuyer= _id =>{
-        fetch(`https://car-resale-server.vercel.app/users/${_id}`,{
+        fetch(`https://car-resale-server-nurmohammad83.vercel.app/users/${_id}`,{
           method:'DELETE',
       
         })

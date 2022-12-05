@@ -10,7 +10,7 @@ const MyOrders = () => {
   const { data: orders,isLoading } = useQuery({
     queryKey: ["orders"],
     queryFn: async () => {
-      const res = await fetch(`https://car-resale-server.vercel.app/orders?email=${user?.email}`,{
+      const res = await fetch(`https://car-resale-server-nurmohammad83.vercel.app/orders?email=${user?.email}`,{
               headers:{
                 authorization:`bearer ${localStorage.getItem('token')}`
               }

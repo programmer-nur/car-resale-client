@@ -11,7 +11,7 @@ const AllSealer = () => {
   } = useQuery({
     queryKey: ["userSealer"],
     queryFn: async () => {
-      const res = await fetch(`https://car-resale-server.vercel.app/userSealer?role=Sealer`,{
+      const res = await fetch(`https://car-resale-server-nurmohammad83.vercel.app/userSealer?role=Sealer`,{
         headers:{
           authorization: `bearer ${localStorage.getItem("token")}`,
         }
@@ -21,7 +21,7 @@ const AllSealer = () => {
     },
   });
   const handelDeleteSealer = (_id) => {
-    fetch(`https://car-resale-server.vercel.app/users/${_id}`, {
+    fetch(`https://car-resale-server-nurmohammad83.vercel.app/users/${_id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -34,7 +34,7 @@ const AllSealer = () => {
   };
 
   const handelVerifyied = (id) => {
-    fetch(`https://car-resale-server.vercel.app/users/verify/${id}`, {
+    fetch(`https://car-resale-server-nurmohammad83.vercel.app/users/verify/${id}`, {
       method: "PUT",
       headers: {
         authorization: `bearer ${localStorage.getItem("token")}`,
