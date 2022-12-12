@@ -228,94 +228,10 @@ const AddProduct = () => {
             </div>
         <input
           className="btn py-4 btn-accent max-w-xs mt-3 w-full"
-          value="Add Doctor"
+          value="Add Car"
           type="submit"
         />
       </form>
-
-
-
-
-
-
-
-
-
-
-
-
-      {/* <div className="add-product form">
-        <form
-          onSubmit={handleSubmit(handelAddProducts)}
-          className=
-        >
-           
-            
-            
-        
-          
-            <div className="form-control w-full max-w-xs">
-              <label className="label">
-                <span className="label-text">Resale Price</span>
-              </label>
-              <input
-                type="number"
-                prefix="Resale Price"
-                {...register("resaleprice", {
-                  required: "Resale Price is a requierd",
-                })}
-                className="input input-bordered w-full max-w-xs"
-              />
-              {errors.resaleprice && (
-                <p className="text-red-400 py-2" role="alert">
-                  {errors.resaleprice?.message}
-                </p>
-              )}
-            </div>
-            <div className="form-control w-full max-w-xs">
-              <label className="label">
-                <span className="label-text">Original Price</span>
-              </label>
-              <input
-                type="number"
-                placeholder="Original Price"
-                {...register("originalprice", {
-                  required: "Original Price is a requierd",
-                })}
-                className="input input-bordered w-full max-w-xs"
-              />
-              {errors.originalprice && (
-                <p className="text-red-400 py-2" role="alert">
-                  {errors.originalprice?.message}
-                </p>
-              )}
-            </div>
-            <div className="form-control w-full max-w-xs">
-              <label className="label">
-                <span className="label-text">Condition</span>
-              </label>
-              <input
-                type="number"
-                placeholder="Condition"
-                {...register("condition", { required: "Name is a requierd" })}
-                className="input input-bordered w-full max-w-xs"
-              />
-              {errors.condition && (
-                <p className="text-red-400 py-2" role="alert">
-                  {errors.condition?.message}
-                </p>
-              )}
-            </div>
-
-            <input
-              className="btn py-4 my-3 max-w-xs btn-accent w-full"
-              value="Add Products"
-              type="submit"
-            />
-            
-      
-        </form> */}
-      {/* </div> */}
     </section>
   );
 };
