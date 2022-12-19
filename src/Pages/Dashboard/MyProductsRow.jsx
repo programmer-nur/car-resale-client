@@ -11,7 +11,7 @@ const MyProductsRow = ({product,handelAddv,handelDeleting}) => {
 			<p className="text-gray-100">ReSale Price ${resaleprice}</p>
 		</div>
 		<div className='flex justify-center'>
-		<button onClick={()=>handelAddv(product)} type="button" className="flex items-center justify-center mr-1 w-full p-3 font-semibold tracking-wide rounded-md bg-violet-400 text-gray-900">Addva</button>
+		<button onClick={()=>handelAddv(product)} type="button" className="flex items-center justify-center mr-1 w-full p-3 font-semibold tracking-wide rounded-md bg-violet-400 text-gray-900">Advg</button>
 		<button onClick={()=>handelDeleting(_id)} type="button" className="flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md bg-violet-400 text-gray-900">Delete</button>
 		</div>
 	</div>

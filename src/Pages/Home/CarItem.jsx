@@ -6,7 +6,7 @@ const CarItem = ({car,setModalCars,setReport}) => {
     const {name,sealerName,img,resaleprice,originalprice,location,condition,time}=car
     return (
         <div className="card card-compact  bg-base-700 shadow-xl">
-        <figure><img className='md:w-full' src={img} alt={name} /></figure>
+        <figure><img className='md:w-full md:h-[278px]' src={img} alt={name} /></figure>
         <div className="card-body">
           <h2 className="card-title text-left">{name}</h2>
          <div className='text-left'>
