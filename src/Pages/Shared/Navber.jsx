@@ -13,30 +13,30 @@ const Navber = () => {
   };
   const menuItems = (
     <>
-      <li>
+      <li className=" mx-2 hover:text-orange-500">
         <Link to="/">Home</Link>
       </li>
-      <li>
+      <li className=" mx-2 hover:text-orange-500">
         <Link to="/categories">Categories</Link>
       </li>
-      <li>
+      <li className=" mx-2 hover:text-orange-500">
         <Link to='/about'>About</Link>
       </li>
-      <li>
+      <li className=" mx-2 hover:text-orange-500">
         <Link to='/blog'>Blog</Link>
       </li>
       {user?.uid ? (
         <>
-          <li>
+          <li className="m-2 hover:text-orange-500">
             <Link to="/dashboard">Dashboard</Link>
           </li>
-          <li>
+          <li className=" mx-2 hover:text-orange-500">
             <Link onClick={handelLogOut}>SignOut</Link>
           </li>
         </>
       ) : (
         <>
-          <li>
+          <li className=" mx-2 hover:text-orange-500">
             <Link to="/login">Login</Link>
           </li>
         </>
@@ -66,7 +66,7 @@ const Navber = () => {
             </label>
             <ul
               tabIndex={1}
-              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-black rounded-box w-52"
+              className="menu menu-compact dropdown-content shadow bg-black rounded-box w-52"
             >
               {menuItems}
             </ul>
