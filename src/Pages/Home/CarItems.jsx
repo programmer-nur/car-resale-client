@@ -23,8 +23,8 @@ const CarItems = () => {
       className="container my-5 w-full mx-auto
         px-9"
     >
-      <h2 className="text-4xl font-bold my-5">Our Service</h2>
-      <div className="grid md:grid-cols-3 gap-9">
+      <h2 className="text-5xl font-bold py-5 sm:py-10 text-center">Our Services</h2>
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-9">
         {
         cars.length &&
         cars?.map((car) => (

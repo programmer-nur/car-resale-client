@@ -13,16 +13,16 @@ const Navber = () => {
   };
   const menuItems = (
     <>
-      <li className=" mx-2 hover:text-orange-500">
+      <li className="text-base font-medium mx-2 hover:text-orange-500">
         <Link to="/">Home</Link>
       </li>
-      <li className=" mx-2 hover:text-orange-500">
+      <li className="text-base font-medium mx-2 hover:text-orange-500">
         <Link to="/categories">Categories</Link>
       </li>
-      <li className=" mx-2 hover:text-orange-500">
+      <li className="text-base font-medium mx-2 hover:text-orange-500">
         <Link to='/about'>About</Link>
       </li>
-      <li className=" mx-2 hover:text-orange-500">
+      <li className="text-base font-medium mx-2 hover:text-orange-500">
         <Link to='/blog'>Blog</Link>
       </li>
       {user?.uid ? (
@@ -30,13 +30,13 @@ const Navber = () => {
           <li className="m-2 hover:text-orange-500">
             <Link to="/dashboard">Dashboard</Link>
           </li>
-          <li className=" mx-2 hover:text-orange-500">
+          <li className="text-base font-medium mx-2 hover:text-orange-500">
             <Link onClick={handelLogOut}>SignOut</Link>
           </li>
         </>
       ) : (
         <>
-          <li className=" mx-2 hover:text-orange-500">
+          <li className="text-base font-medium  mx-2 hover:text-orange-500">
             <Link to="/login">Login</Link>
           </li>
         </>

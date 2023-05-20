@@ -18,28 +18,17 @@ import {
   Navigation,
   Keyboard,
 } from "swiper";
-import Loading from "../Shared/Loading";
 import Customer from "./Customer";
-import { useQuery } from "@tanstack/react-query";
-
+import { reviews } from "../../Context";
+import {motion} from "framer-motion"
 const Review = () => {
-  const {data:reviews=[],isLoading}=useQuery({
-    queryKey:['reviews'],
-    queryFn:async()=>{
-        const res = await fetch("https://car-resale-server-nurmohammad83.vercel.app/reviews");
-        const data = await res.json()
-        return data
-    }
-  })
-
-  
-  if (isLoading) {
-    return <Loading></Loading>;
-  }
-
   return (
-    <section className="pt-32 max-w-6xl mx-auto">
-      <h2 className="text-5xl font-semibold text-center">Customer Feedback</h2>
+    <section className="pt-16 min-h-screen max-w-6xl mx-auto">
+      <motion.h2
+      initial={{opacity:0,scale:0}}
+      whileInView={{opacity:1,scale:1}}
+      transition={{duration:.8}}
+      className="text-5xl font-semibold text-center">Customer Feedback</motion.h2>
       <Swiper
         effect={"coverflow"}
         grabCursor={true}
@@ -59,10 +48,7 @@ const Review = () => {
         keyboard={{
           enabled: true,
         }}
-        autoplay={{
-          delay: 2000,
-          disableOnInteraction: false,
-        }}
+       
         modules={[EffectCoverflow, Autoplay, Pagination, Keyboard, Navigation]}
         className="mySwiper"
       >

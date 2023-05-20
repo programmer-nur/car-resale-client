@@ -10,6 +10,17 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.bg-gray-gradient {
+  background: linear-gradient(
+    -168.39deg,
+    #c9ce7c -278.56%,
+    #ad78dc -78.47%,
+    #c79cec -78.47%,
+    #bef3f3 91.61%
+  );
+}
+
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

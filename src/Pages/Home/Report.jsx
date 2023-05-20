@@ -28,10 +28,8 @@ const Report = ({report}) => {
     .then(res=>res.json())
     .then(data=>{
       toast('Report Successfully')
-      console.log(data);
       form.reset()
     })
-    console.log(reportItem)
   };
 
   return (
@@ -59,7 +57,7 @@ const Report = ({report}) => {
               <div className="form-control w-full max-w-xs">
               <textarea
              name="message"
-              className="textarea textarea-bordered" placeholder="Write Your Message"></textarea>
+              className="textarea textarea-bordered" placeholder="Write Your Message" required></textarea>
              
             </div>
             <div className="modal-action">

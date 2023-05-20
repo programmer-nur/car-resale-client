@@ -1,11 +1,18 @@
 import React from 'react';
 import VisibilitySensor from "react-visibility-sensor";
 import CountUp from "react-countup";
+import {motion} from "framer-motion"
+
+
 const OurWork = () => {
     return (
-        <section className="p-6 my-9 text-gray-100">
-            <h3 className='text-center text-black text-5xl mb-8'>What We Do</h3>
-	<div className="container grid grid-cols-1 gap-6 mx-auto sm:grid-cols-2 xl:grid-cols-4">
+        <section className="p-6 text-gray-100">
+            <motion.h3
+			initial={{opacity:0,scale:0}}
+			whileInView={{opacity:1,scale:1}}
+			transition={{duration:.8}}
+			className='text-center text-black text-5xl'>What We Do</motion.h3>
+	<div className="container grid grid-cols-1 py-6 sm:py-16 gap-6 mx-auto sm:grid-cols-2 xl:grid-cols-4">
         
 		<div className="flex p-4 space-x-4 rounded-lg md:space-x-6 bg-gray-900 text-gray-100">
 			<div className="flex justify-center p-2 align-middle rounded-lg sm:p-4 bg-violet-400">
