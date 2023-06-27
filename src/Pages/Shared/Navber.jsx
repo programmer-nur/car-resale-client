@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
-
+import logo from '../../assets/orilogo.png'
 import { AuthContext } from "../../Context/AuthProvider";
 
 const Navber = () => {
@@ -13,16 +13,16 @@ const Navber = () => {
   };
   const menuItems = (
     <>
-      <li className="text-base font-medium mx-2 hover:text-orange-500">
+      <li className="text-base font-medium mx-2 p-0 hover:text-orange-500">
         <Link to="/">Home</Link>
       </li>
-      <li className="text-base font-medium mx-2 hover:text-orange-500">
+      <li className="text-base font-medium mx-2 p-0 hover:text-orange-500">
         <Link to="/categories">Categories</Link>
       </li>
-      <li className="text-base font-medium mx-2 hover:text-orange-500">
+      <li className="text-base font-medium mx-2 p-0 hover:text-orange-500">
         <Link to='/about'>About</Link>
       </li>
-      <li className="text-base font-medium mx-2 hover:text-orange-500">
+      <li className="text-base font-medium mx-2 p-0 hover:text-orange-500">
         <Link to='/blog'>Blog</Link>
       </li>
       {user?.uid ? (
@@ -46,7 +46,7 @@ const Navber = () => {
   return (
     <div>
       <div className="navbar bg-black text-white flex justify-between">
-        <div className="navbar-start">
+        <div className="navbar-start md:ml-8">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
               <svg
@@ -66,13 +66,13 @@ const Navber = () => {
             </label>
             <ul
               tabIndex={1}
-              className="menu menu-compact dropdown-content shadow bg-black rounded-box w-52"
+              className="menu menu-compact dropdown-content shadow bg-black"
             >
               {menuItems}
             </ul>
           </div>
-          <Link to="/" className="btn btn-ghost normal-case text-xl">
-            <span className="text-orange-600">NM</span><p>CARMART</p>
+          <Link to="/" className="mr-5 text-xl">
+           <img src={logo} className="mr-5"  alt="" />
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">

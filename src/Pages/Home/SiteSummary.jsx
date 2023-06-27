@@ -12,10 +12,9 @@ const SiteSummary = () => {
         }}
         className="min-h-screen  py-24 px-8"
       >
-        <motion.div 
-        initial={{opacity:0,scale:0}}
-        whileInView={{opacity:1,scale:1}}
-        transition={{duration:.8}}
+        <motion.div initial={{opacity:0,scale:0}}
+			whileInView={{opacity:1,scale:1}}
+			transition={{duration:.8}}
         >
         <h2 className="text-5xl font-semibold text-center text-white mb-8">
           Why Choose Our Services?
@@ -23,10 +22,7 @@ const SiteSummary = () => {
         <p className='text-center text-base text-white mb-3'>Buying a used car can be stressful. We’ve got your back. We’ll give you peace of mind and keep you on the road.</p>
         </motion.div>
         <div className="grid grid-cols-1 lg:grid-cols-2 justify-items-center gap-y-8">
-          <motion.div
-          initial={{opacity:0,scale:0}}
-        whileInView={{opacity:1,scale:1}}
-        transition={{duration:.8}}
+          <div
           className="card max-w-sm text-white hover:bg-accent duration-300 shadow-xl">
             <div className="card-body">
               <h2 className="card-title font-bold text-2xl">
@@ -38,11 +34,8 @@ const SiteSummary = () => {
               Not satisfied with your purchase? We’ll exchange it for another vehicle of equal or lesser value.
               </p>
             </div>
-          </motion.div>
-          <motion.div
-          initial={{opacity:0,scale:0}}
-        whileInView={{opacity:1,scale:1}}
-        transition={{duration:.8}}
+          </div>
+          <div
           className="card max-w-sm text-white hover:bg-accent duration-300 shadow-xl">
             <div className="card-body">
               <h2 className="card-title font-bold text-2xl">
@@ -53,11 +46,8 @@ const SiteSummary = () => {
               Get added protection for your purchase with three tiers of service including oil changes and roadside assistance.
               </p>
             </div>
-          </motion.div>
-          <motion.div
-          initial={{opacity:0,scale:0}}
-        whileInView={{opacity:1,scale:1}}
-        transition={{duration:.8}}
+          </div>
+          <div
           className="card max-w-sm text-white hover:bg-accent duration-300 shadow-xl">
             <div className="card-body">
               <h2 className="card-title font-bold text-2xl">
@@ -68,11 +58,8 @@ const SiteSummary = () => {
               Have your remaining debt cancelled in the event your vehicle is stolen or considered a total loss.
               </p>
             </div>
-          </motion.div>
-          <motion.div
-          initial={{opacity:0,scale:0}}
-        whileInView={{opacity:1,scale:1}}
-        transition={{duration:.8}}
+          </div>
+          <div
           className="card max-w-sm text-white hover:bg-accent duration-300 shadow-xl">
             <div className="card-body">
               <h2 className="card-title font-bold text-2xl">
@@ -83,11 +70,8 @@ const SiteSummary = () => {
               Choose from several convenient ways to make your payments – so you have control
               </p>
             </div>
-          </motion.div>
-          <motion.div
-          initial={{opacity:0,scale:0}}
-        whileInView={{opacity:1,scale:1}}
-        transition={{duration:.8}}
+          </div>
+          <div
           className="card max-w-sm text-white hover:bg-accent duration-300 shadow-xl">
             <div className="card-body">
               <h2 className="card-title font-bold text-2xl">
@@ -96,11 +80,8 @@ const SiteSummary = () => {
               </h2>
               <p>Reliable, Effective &Technically Advanced Products!</p>
             </div>
-          </motion.div>
-          <motion.div
-          initial={{opacity:0,scale:0}}
-        whileInView={{opacity:1,scale:1}}
-        transition={{duration:.8}}
+          </div>
+          <div
           className="card max-w-sm text-white hover:bg-accent duration-300 shadow-xl">
             <div className="card-body">
               <h2 className="card-title font-bold text-2xl">
@@ -114,7 +95,7 @@ const SiteSummary = () => {
                 industry expertise.
               </p>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
     );

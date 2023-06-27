@@ -12,22 +12,24 @@ const Categories = () => {
         return data
     }
    })
-   if(isLoading){
-    <Loading/>
-   }
+   
+   console.log(categories)
     return (
-        <section className='container w-full mx-auto'>
-            <h2 className="text-4xl mx-3 font-semibold my-4">Categories</h2>
-            
-            <div className='grid py-6 mx-3 md:grid-cols-2 lg:grid-cols-3 gap-6'>
-           {
-            categories.map(category=><Category
-            key={category._id}
-            category={category}
-            />)
-           }
+        <section className="container w-full mx-auto">
+      <h2 className="text-4xl mx-3 font-semibold my-4">Categories</h2>
+
+      {isLoading ? (
+        // Render loading state
+        <Loading />
+      ) : (
+        // Render categories
+        <div className="grid py-6 mx-3 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {categories.map((category) => (
+            <Category key={category._id} category={category} />
+          ))}
         </div>
-        </section>
+      )}
+    </section>
     );
 };
 

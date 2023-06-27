@@ -9,7 +9,8 @@ const CarItem = ({ car, setModalCars, setReport }) => {
   const {
     name,
     img,
-    originalprice
+    originalprice,
+    location
   } = car;
   return (
     <motion.div
@@ -23,20 +24,22 @@ const CarItem = ({ car, setModalCars, setReport }) => {
       whileTap={{ cursor: "grabbing" }}
       className="bg-[#e4dfdc] cursor-grab  relative shadow-lg rounded-md"
     >
-      <div className="card shadow-xl">
+      <div className="card shadow-xl h-full">
         <figure>
-          <img className="h-56 p-1 w-full" src={img} alt="Shoes" />
+          <img className="h-64 p-1 w-full" src={img} alt="Shoes" />
         </figure>
         <div className="card-body">
           <h2 className="card-title">{name}</h2>
-          <p className="text-base font-bold">Price ${originalprice}</p>
+          <p className="text-base font-bold">Location: {location}</p>
+          <p className="text-base font-bold">Price: ${originalprice}</p>
+         
           <div className="card-actions pt-2 items-center justify-between">
             <motion.button>
               <motion.label
                 htmlFor="report-modal"
                 initial={{ scale: 1 }}
                 whileHover={{ scale: 1.1 }}
-                className="sm:px-8 cursor-pointer sm:py-3 px-5 py-2 text-sm sm:font-medium text-white bg-red-500"
+                className="sm:px-8 cursor-pointer sm:py-3 px-5 py-2 text-sm sm:font-medium rounded-md text-white bg-red-500"
                 onClick={() => setReport(car)}
               >
                 Report
@@ -52,7 +55,7 @@ const CarItem = ({ car, setModalCars, setReport }) => {
                 htmlFor="booking-modal"
                 initial={{ scale: 1 }}
                 whileHover={{ scale: 1.1 }}
-                className="inline-block cursor-pointer border border-lime-500 bg-lime-500  sm:px-8 sm:py-3 px-5 py-2 active:border-lime-400 active:bg-lime-400 text-sm font-medium rounded-md text-white "
+                className="inline-block cursor-pointer border border-white bg-white   sm:px-8 sm:py-3 px-5 py-2 active:border-white text-black active:bg-white text-sm font-medium rounded-md"
                 onClick={() => setModalCars(car)}
               >
                 purchase
