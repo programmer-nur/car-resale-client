@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Typewriter from 'typewriter-effect';
-import car from '../../assets/car.jpg'
+import car from '../../assets/herocar.jpg'
 import BtnPrimary from '../../Utilities/BtnPrimary';
 import {motion} from 'framer-motion';
 const Banner = () => {
     return (
-        <div className="hero min-h-screen" style={{ backgroundImage: `url(${car})` }}>
+        <div className="hero min-h-screen" style={{ backgroundImage: `url(${car})` ,backgroundRepeat:'no-repeat',backgroundSize:'cover',backgroundPosition:'center'}}>
         <div className="hero-overlay bg-opacity-60"></div>
         <div className="hero-content text-center text-neutral-content">
           <div className="">
@@ -16,7 +16,7 @@ const Banner = () => {
             transition={{duration:.8}}
             className='text-2xl'>Worldwide Exporters</motion.h2>
           <h1
-              className="md:text-5xl text-4xl text-white font-bold text-center my-4"
+              className="md:text-5xl text-4xl text-white font-bold text-center my-4 sm:py-7"
               style={{
                 textShadow: "0 0 50px black, 0 0 50px black, 0 0 10px yellow",
               }}

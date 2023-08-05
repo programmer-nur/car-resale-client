@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
+import { AiOutlineLogin } from "react-icons/ai";
 import logo from '../../assets/orilogo.png'
 import { AuthContext } from "../../Context/AuthProvider";
 
@@ -36,16 +37,16 @@ const Navber = () => {
         </>
       ) : (
         <>
-          <li className="text-base font-medium  mx-2 hover:text-orange-500">
-            <Link to="/login">Login</Link>
+          <li className="text-base text-blue-500 rounded-md font-medium  mx-2 hover:text-orange-500">
+            <Link to="/login"><AiOutlineLogin />Login</Link>
           </li>
         </>
       )}
     </>
   );
   return (
-    <div>
-      <div className="navbar bg-black text-white flex justify-between">
+    <div className="bg-black sticky top-0 z-50">
+      <div className="navbar container mx-auto  text-white flex justify-between">
         <div className="navbar-start md:ml-8">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -66,7 +67,7 @@ const Navber = () => {
             </label>
             <ul
               tabIndex={1}
-              className="menu menu-compact dropdown-content shadow bg-black"
+              className="menu p-0 menu-compact dropdown-content shadow bg-black"
             >
               {menuItems}
             </ul>

@@ -4,7 +4,7 @@ import toast from "react-hot-toast";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthProvider";
 import useToken from "../../hooks/useToken";
-
+import { AiFillGoogleCircle } from "react-icons/ai";
 
 const Login = () => {
   const { createUserGoogle, logIn } = useContext(AuthContext);
@@ -64,14 +64,9 @@ const Login = () => {
     })
   }
   return (
-    <section
-      style={{
-        background: `url('https://i.ibb.co/D5Jyyzd/Pngtree-texture-geometric-black-background-930090.jpg')`,
-        backgroundSize: "cover",
-      }}
-    >
+    <section>
       <div className="h-[600px] flex  justify-center items-center ">
-        <div className="w-96 p-7 rounded-xl shadow-xl bg-white">
+        <div className="w-96 p-7 rounded-xl  shadow-xl bg-gray-100">
           <h3 className="text-2xl font-bold text-center py-5">Log in</h3>
           <form onSubmit={handleSubmit(handelLogin)}>
             <div className="form-control w-full max-w-xs">
@@ -135,8 +130,9 @@ const Login = () => {
           </div>
           <button
             onClick={handelGoogleIn}
-            className="btn btn-outline w-full py-5"
+            className="bg-gray-400 justify-center text-white rounded-md flex items-center gap-2 w-full py-3"
           >
+            <AiFillGoogleCircle className="text-xl"/>
             Google With Connected
           </button>
         </div>
