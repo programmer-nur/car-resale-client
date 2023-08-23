@@ -37,7 +37,7 @@ const CarItems = () => {
         ))}
       </div>
       {modalCars && (
-        <PurchechModal closeModal={closeModal} modalCars={modalCars} />
+        <PurchechModal  closeModal={closeModal} modalCars={modalCars} />
       )}
       {<Report report={report} />}
     </section>

@@ -30,7 +30,7 @@ const Category = ({ category }) => {
         <h2 className="text-xl font-bold">{category.category}</h2>
         <Link to={`/categories/${category.id}`}>
           {" "}
-          <BtnPrimary>More</BtnPrimary>
+          <button className="py-2 hover:bg-blue-700 px-5 font-semibold text-white bg-blue-500 rounded-md">More</button>
         </Link>
       </div>
     </motion.div>

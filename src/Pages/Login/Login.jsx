@@ -23,7 +23,6 @@ const Login = () => {
     formState: { errors },
   } = useForm();
 
-  const handelEmailBlur = () => {};
   const handelLogin = (data) => {
     logIn(data.email, data.password)
       .then((res) => {
@@ -41,9 +40,9 @@ const Login = () => {
     const role = 'Buyer'
     createUserGoogle().then((res) => {
       const user = res.user;
-      console.log(res.user);
       saveMongodbUser(user?.displayName,user.email,role)
       toast("Login Successfully");
+      navigate(from, {replace:true})
     });
   };
 
@@ -58,7 +57,6 @@ const Login = () => {
     })
     .then(res=>res.json())
     .then(data=>{
-      console.log(data);
       setLoginUserEmail(email)
      
     })
@@ -71,11 +69,13 @@ const Login = () => {
           <form onSubmit={handleSubmit(handelLogin)}>
             <div className="form-control w-full max-w-xs">
               <label className="label">
-                <span className="label-text">Email</span>
+              <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
+    Email
+  </span>
               </label>
               <input
-                onBlur={handelEmailBlur}
                 name="email"
+                placeholder="Enter Your Email"
                 type="text"
                 {...register("email", {
                   required: "Email Address is required",
@@ -90,10 +90,13 @@ const Login = () => {
             </div>
             <div className="form-control w-full max-w-xs">
               <label className="label">
-                <span className="label-text">Password</span>
+              <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
+    Password
+  </span>
               </label>
               <input
                 type="password"
+                placeholder="Enter Your Password"
                 {...register("password", {
                   required: "Password is required",
                   minLength: {
@@ -113,7 +116,7 @@ const Login = () => {
               </label>
             </div>
             <input
-              className="btn py-4 btn-accent w-full"
+              className=" py-2 cursor-pointer bg-blue-500 hover:bg-blue-700 rounded-md text-white font-semibold w-full"
               value="Log In"
               type="submit"
             />

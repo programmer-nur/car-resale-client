@@ -14,31 +14,31 @@ const Navber = () => {
   };
   const menuItems = (
     <>
-      <li className="text-base font-medium mx-2 p-0 hover:text-orange-500">
-        <Link to="/">Home</Link>
+      <li className="text-base font-medium mx-2 p-0">
+        <Link className="bg-none hover:bg-none hover:text-blue-500 py-2 rounded-md" to="/">Home</Link>
       </li>
-      <li className="text-base font-medium mx-2 p-0 hover:text-orange-500">
-        <Link to="/categories">Categories</Link>
+      <li className="text-base font-medium mx-2 p-0">
+        <Link className="bg-none hover:bg-none hover:text-blue-500 py-2 rounded-md" to="/categories">Categories</Link>
       </li>
-      <li className="text-base font-medium mx-2 p-0 hover:text-orange-500">
-        <Link to='/about'>About</Link>
+      <li className="text-base font-medium mx-2 p-0">
+        <Link className="bg-none hover:bg-none hover:text-blue-500 py-2 rounded-md" to='/about'>About</Link>
       </li>
-      <li className="text-base font-medium mx-2 p-0 hover:text-orange-500">
-        <Link to='/blog'>Blog</Link>
+      <li className="text-base font-medium mx-2 p-0">
+        <Link className="bg-none hover:bg-none hover:text-blue-500 py-2 rounded-md" to='/blog'>Blog</Link>
       </li>
       {user?.uid ? (
         <>
-          <li className="m-2 hover:text-orange-500">
-            <Link to="/dashboard">Dashboard</Link>
+          <li className="text-base font-medium mx-2 p-0">
+            <Link className="bg-none hover:bg-none hover:text-blue-500 py-2 rounded-md" to="/dashboard">Dashboard</Link>
           </li>
-          <li className="text-base font-medium mx-2 hover:text-orange-500">
-            <Link onClick={handelLogOut}>SignOut</Link>
+          <li className="text-base font-medium mx-2">
+            <Link className="bg-none hover:bg-none hover:text-blue-500 py-2 rounded-md" onClick={handelLogOut}>SignOut</Link>
           </li>
         </>
       ) : (
         <>
-          <li className="text-base text-blue-500 rounded-md font-medium  mx-2 hover:text-orange-500">
-            <Link to="/login"><AiOutlineLogin />Login</Link>
+          <li className="text-base text-blue-500 rounded-md font-medium  mx-2">
+            <Link className="text-white bg-blue-500 py-2 rounded-md" to="/login"><AiOutlineLogin />Login</Link>
           </li>
         </>
       )}

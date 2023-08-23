@@ -10,10 +10,10 @@ const PurchechModal = ({ modalCars,closeModel }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     const order = {
-      productId: modalCars._id,
-      productName: modalCars.name,
-      productImg: modalCars.img,
-      productPrice: modalCars.resaleprice,
+      productId: modalCars?._id,
+      productName: modalCars?.name,
+      productImg: modalCars?.img,
+      productPrice: modalCars?.resaleprice,
       email: user?.email,
       customerName: user?.displayName,
       address: event.target.address.value,
@@ -47,11 +47,11 @@ const PurchechModal = ({ modalCars,closeModel }) => {
           >
             ✕
           </label>
-          <section className="min-h-screen bg-slate-300">
-            <div className=" w-80 md:w-9/12  mx-auto">
+          <section className="bg-gray-200">
+            <div className="">
               <div className="md:flex md:items-center p-4">
-                <div className="md:mx-4">
-                  <h2 className="mt-2 text-sm">
+                <div>
+                  <h2 className="mt-2 text-sm font-semibold">
                     Please Fill Up The Form Below To Complete The Purchase
                   </h2>
                 </div>
@@ -60,87 +60,57 @@ const PurchechModal = ({ modalCars,closeModel }) => {
               <div className="order-form">
                 <form
                   onSubmit={handleSubmit}
-                  className="grid md:grid-cols-1 sm:gap-4 lg:gap-0 mx-auto"
+                  className="grid justify-center iec md:grid-cols-1 sm:gap-4 lg:gap-0 mx-auto"
                 >
-                  <div>
-                    <label className="label">
-                      <span className="label-text font-semibold pl-3">
-                        Name
-                      </span>
-                    </label>
+                  <div className="flex justify-center items-center flex-col">
                     <input
                       type="text"
                       name="name"
-                      className="input rounded-md w-full max-w-xs"
+                      className="input my-1 rounded-md w-full max-w-xs"
                       defaultValue={user?.displayName}
                       disabled
                     />
-                    <label className="label">
-                      <span className="label-text font-semibold pl-3">
-                        Email
-                      </span>
-                    </label>
                     <input
                       type="email"
                       name="email"
-                      className="input rounded-md w-full max-w-xs"
+                      className="input my-1 rounded-md w-full max-w-xs"
                       defaultValue={user?.email}
                       disabled
                     />
-                    <label className="label">
-                      <span className="label-text font-semibold pl-3">
-                        Product Name
-                      </span>
-                    </label>
                     <input
                       type="text"
                       name="productName"
-                      className="input rounded-md w-full max-w-xs"
+                      className="input my-1 rounded-md w-full max-w-xs"
                       defaultValue={modalCars?.name}
                       disabled
                     />
-                    <label className="label">
-                      <span className="label-text font-semibold pl-3">
-                        Product Price
-                      </span>
-                    </label>
                     <input
                       type="text"
                       name="productPrice"
-                      className="input rounded-md w-full max-w-xs"
+                      className="input my-1 rounded-md w-full max-w-xs"
                       defaultValue={modalCars?.resaleprice}
                       disabled
                     />
                   </div>
-                  <div>
-                    <label className="label">
-                      <span className="label-text font-semibold pl-3">
-                        Address
-                      </span>
-                    </label>
+                  <div className="flex justify-center items-center flex-col">
                     <input
                       type="text"
                       name="address"
                       placeholder="Your Address"
-                      className="input rounded-md w-full max-w-xs"
+                      className="input my-1 rounded-md w-full max-w-xs"
                       required
                     />
-                    <label className="label">
-                      <span className="label-text font-semibold pl-3">
-                        Contact No
-                      </span>
-                    </label>
                     <input
                       type="number"
                       name="contact"
                       placeholder="Your Contact No"
-                      className="input rounded-md w-full max-w-xs"
+                      className="input my-1 rounded-md w-full max-w-xs"
                     />
                     <div className="modal-action">
                       <label>
                         <input
                           htmlFor="booking-modal"
-                          className="btn btn-primary w-full rounded-full text-white max-w-xs block my-4"
+                          className=" bg-blue-500 hover:bg-blue-700 px-5 py-2 cursor-pointer w-full rounded-md font-semibold mb-2 text-white max-w-xs block"
                           type="submit"
                           onClick={closeModel}
                           value="Order Now"

@@ -81,10 +81,13 @@ const Signup = () => {
           <form onSubmit={handleSubmit(handelSignUp)}>
             <div className="form-control w-full max-w-xs">
               <label className="label">
-                <span className="label-text">Name</span>
+              <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
+    Name
+  </span>
               </label>
               <input
                 type="text"
+                placeholder="Enter Your Name"
                 {...register("name", { required: "Name is a requierd" })}
                 className="input input-bordered w-full max-w-xs"
               />
@@ -96,7 +99,9 @@ const Signup = () => {
             </div>
             <div className="form-control w-full max-w-xs">
               <label className="label">
-                <span className="label-text">Buyer/Sealer</span>
+              <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
+    Buyer/Seller
+  </span>
               </label>
             
 
@@ -116,10 +121,13 @@ const Signup = () => {
             </div>
             <div className="form-control w-full max-w-xs">
               <label className="label">
-                <span className="label-text">Email</span>
+              <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
+    Email
+  </span>
               </label>
               <input
                 type="text"
+                placeholder="Enter Your Email"
                 {...register("email", {
                   required: "Email Address is required",
                 })}
@@ -133,10 +141,13 @@ const Signup = () => {
             </div>
             <div className="form-control w-full max-w-xs">
               <label className="label">
-                <span className="label-text">Password</span>
+              <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
+    Password
+  </span>
               </label>
               <input
                 type="password"
+                placeholder="Enter Your Password"
                 {...register("password", { required: "Password is required" })}
                 className="input input-bordered w-full max-w-xs"
               />
@@ -150,7 +161,7 @@ const Signup = () => {
               </label>
             </div>
             <input
-              className="btn py-4 btn-accent w-full"
+              className="py-2 cursor-pointer bg-blue-500 hover:bg-blue-700 rounded-md text-white font-semibold w-full"
               value="Sign Up"
               type="submit"
             />

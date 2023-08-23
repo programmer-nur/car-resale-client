@@ -15,7 +15,6 @@ const MyOrders = () => {
               }
       });
       const data = await res.json();
-      console.log(data);
       return data;
     },
   });
@@ -68,7 +67,7 @@ const MyOrders = () => {
                   <td>
                   {order?.productPrice && !order?.paid && (
                     <Link to={`/dashboard/payment/${order._id}`}>
-                      <button className="btn btn-primary btn-sm">Pay</button>
+                      <button className="py-1 px-4 bg-blue-500 hover:bg-blue-700 text-white font-semibold rounded-md">Pay</button>
                     </Link>
                   )}
                   {order?.productPrice && order?.paid && (
