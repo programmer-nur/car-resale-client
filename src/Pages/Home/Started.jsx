@@ -41,7 +41,7 @@ const Started = () => {
               Registration
             </h3>
             <h3 className="text-white sm:text-xl pt-3">
-              Create an account to Alpha Steelwork
+              Create an account to Car Resale
             </h3>
           </VerticalTimelineElement>
 

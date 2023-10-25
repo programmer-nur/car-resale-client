@@ -8,15 +8,15 @@ const MyProfile = () => {
     
     return (
         <section>
-        <h2 className="text-3xl font-semibold text-primary my-4 ml-3">
+        <h2 className="text-3xl font-semibold font-poppins text-blue-500 my-4 ml-3">
           My Profile
         </h2>
         <div>
-          <div className="mt-6 mb-20">
-            <div className="card max-w-sm bg-base-100 shadow-xl px-4 lg:px-0">
+          <div className="flex justify-center items-center mb-20">
+            <div className="card w-96 bg-base-100 shadow-xl px-4 lg:px-0">
               <figure className="px-10 pt-10">
                 <div className="avatar">
-                  <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                  <div className="w-24 rounded-full ring ring-bluetext-blue-500 ring-offset-base-100 ring-offset-2">
                     <FontAwesomeIcon
                       className="pt-2 pl-4"
                       icon={faUser}
@@ -29,9 +29,9 @@ const MyProfile = () => {
                 <h2 className="card-title text-2xl uppercase">{user?.displayName}</h2>
                 <hr className="border-2 my-6 border-accent mr-4" />
                 <p className="my-3">
-                  <span className="font-semibold">Email :</span>
+                  <span className="font-semibold">Email : <span>{user?.email}</span></span>
                 </p>
-                <p>{user?.email}</p>
+                
                 
               </div>
             </div>

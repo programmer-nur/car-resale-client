@@ -24,13 +24,13 @@ const DashboardLayout = () => {
         <div className="drawer-content">
           <Outlet />
         </div>
-        <div className="drawer-side">
+        <div className="drawer-side font-roboto">
           <label htmlFor="dashboard-drawer" className="drawer-overlay"></label>
           <ul className="menu p-4 w-80 bg-slate-400 text-white ">
             <h2 className="text-center text-3xl text-primary mb-1">
               Dashboard
             </h2>
-            <hr />
+            <hr className="mb-4"/>
             <li>
               <Link to='/dashboard'>My Profile</Link>
             </li>
