@@ -16,7 +16,7 @@ const Categories = () => {
    console.log(categories)
     return (
         <section className="container w-full py-5 md:py-12 mx-auto">
-      <h2 className="text-4xl mx-3 text-center font-semibold my-4">Categories</h2>
+      <h2 className="text-5xl mx-3 text-center font-semibold my-4">Categories</h2>
 
       {isLoading ? (
         // Render loading state

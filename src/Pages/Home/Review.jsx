@@ -49,7 +49,7 @@ const Review = () => {
           <SwiperSlide key={review._id}>         
 <div class=" h-full mb-6 m-4 p-4">
         <div class="h-full text-center">
-          <img alt="testimonial" class="w-16 h-16 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100" src={review.img}/>
+          <img alt="testimonial" class="w-16 h-16 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-[#BBC6C8]" src={review.img}/>
           <p class="leading-relaxed">{review.des}</p>
           <span class="inline-block h-1 w-10 rounded bg-indigo-500 mt-6 mb-4"></span>
           <h2 class="text-gray-900 font-medium title-font tracking-wider text-sm">{review.name}</h2>

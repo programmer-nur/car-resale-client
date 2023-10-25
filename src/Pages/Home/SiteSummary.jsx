@@ -10,7 +10,7 @@ const SiteSummary = () => {
         backgroundSize: "cover",
         backgroundRepeat: "repeat-y",
       }}
-      className="min-h-screen  py-24 px-8"
+      className="min-h-screen font-roboto py-24 px-8"
     >
       <motion.div
         initial={{ opacity: 0, scale: 0 }}
@@ -26,7 +26,7 @@ const SiteSummary = () => {
         </p>
       </motion.div>
       <div className="grid grid-cols-1 lg:grid-cols-2 justify-items-center gap-y-8">
-        <div className="card max-w-sm text-white hover:bg-accent duration-300 shadow-xl">
+        <div className="card max-w-sm text-white hover:bg-white/80 hover:text-black duration-300 shadow-xl">
           <div className="card-body">
             <h2 className="card-title font-bold text-2xl">
               <FontAwesomeIcon icon={faCircleCheck} size="xl" />
@@ -38,7 +38,7 @@ const SiteSummary = () => {
             </p>
           </div>
         </div>
-        <div className="card max-w-sm text-white hover:bg-accent duration-300 shadow-xl">
+        <div className="card max-w-sm text-white hover:bg-white/80 hover:text-black duration-300 shadow-xl">
           <div className="card-body">
             <h2 className="card-title font-bold text-2xl">
               <FontAwesomeIcon icon={faCircleCheck} size="xl" />
@@ -50,7 +50,7 @@ const SiteSummary = () => {
             </p>
           </div>
         </div>
-        <div className="card max-w-sm text-white hover:bg-accent duration-300 shadow-xl">
+        <div className="card max-w-sm text-white hover:bg-white/80 hover:text-black duration-300 shadow-xl">
           <div className="card-body">
             <h2 className="card-title font-bold text-2xl">
               <FontAwesomeIcon icon={faCircleCheck} size="xl" />
@@ -62,7 +62,7 @@ const SiteSummary = () => {
             </p>
           </div>
         </div>
-        <div className="card max-w-sm text-white hover:bg-accent duration-300 shadow-xl">
+        <div className="card max-w-sm text-white hover:bg-white/80 hover:text-black duration-300 shadow-xl">
           <div className="card-body">
             <h2 className="card-title font-bold text-2xl">
               <FontAwesomeIcon icon={faCircleCheck} size="xl" />
@@ -74,7 +74,7 @@ const SiteSummary = () => {
             </p>
           </div>
         </div>
-        <div className="card max-w-sm text-white hover:bg-accent duration-300 shadow-xl">
+        <div className="card max-w-sm text-white hover:bg-white/80 hover:text-black duration-300 shadow-xl">
           <div className="card-body">
             <h2 className="card-title font-bold text-2xl">
               <FontAwesomeIcon icon={faCircleCheck} size="xl" />
@@ -83,7 +83,7 @@ const SiteSummary = () => {
             <p>Reliable, Effective &Technically Advanced Products!</p>
           </div>
         </div>
-        <div className="card max-w-sm text-white hover:bg-accent duration-300 shadow-xl">
+        <div className="card max-w-sm text-white hover:bg-white/80 hover:text-black duration-300 shadow-xl">
           <div className="card-body">
             <h2 className="card-title font-bold text-2xl">
               <FontAwesomeIcon icon={faCircleCheck} size="xl" />
