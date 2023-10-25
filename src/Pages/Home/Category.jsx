@@ -13,7 +13,7 @@ const Category = ({ category }) => {
       initial={{ opacity: 0, scale: 0 }}
       whileInView={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.8 }}
-      className="bg-[#e4dfdc] border-[4px] border-white relative shadow-lg rounded-md"
+      className="bg-[#f8f8f8] border-[4px] border-white relative shadow-lg rounded-md"
     >
       <motion.img
         style={{ x, y, rotateX, rotateY, z: 100000 }}

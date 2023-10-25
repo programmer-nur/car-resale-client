@@ -6,30 +6,23 @@ import OurWork from "./OurWork";
 import Review from "./Review";
 import SiteSummary from "./SiteSummary";
 import Supports from "./Supports";
-import Cover from "../../assets/carcover.png";
 import Started from "./Started";
 const Home = () => {
   return (
-    <div>
+    <div className="bg-[#dfedf0]">
       <Banner />
       <div
-        style={{
-          background: `url(${Cover})`,
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-        }}
         className="py-5 sm:py-10"
       >
         <Supports />
-        <hr className="mx-9" />
         <Categories />
         <Started />
       </div>
       <SiteSummary />
-      <div className="py-5 bg-[#BBC6C8] relative sm:py-10 z-20">  
+      <div className="py-5 bg-[#dfedf0] relative sm:py-10 z-20">  
           <OurWork />  
         <Review />   
+        <Contract />
       </div>
     </div>
   );
