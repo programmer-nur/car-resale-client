@@ -6,7 +6,7 @@ import {motion} from "framer-motion"
 
 const OurWork = () => {
     return (
-        <section className="p-6 text-gray-100">
+        <section className="p-6 font-roboto text-gray-100">
             <motion.h3
 			initial={{opacity:0,scale:0}}
 			whileInView={{opacity:1,scale:1}}

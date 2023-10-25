@@ -21,12 +21,14 @@ const Home = () => {
         }}
         className="py-5 sm:py-10"
       >
+        <Supports />
         <hr className="mx-9" />
         <Categories />
         <Started />
       </div>
       <SiteSummary />
-      <div className="py-5 bg-[#BBC6C8] relative sm:py-10 z-20">    
+      <div className="py-5 bg-[#BBC6C8] relative sm:py-10 z-20">  
+          <OurWork />  
         <Review />   
       </div>
     </div>
