@@ -15,29 +15,29 @@ const Navber = () => {
   const menuItems = (
     <>
       <li className="text-base font-medium mx-2 p-0">
-        <Link className="bg-none hover:bg-none hover:text-blue-500 py-2 rounded-md" to="/">Home</Link>
+        <Link className="bg-none bg-inherit hover:bg-none hover:text-blue-500 py-2 rounded-md" to="/">Home</Link>
       </li>
       <li className="text-base font-medium mx-2 p-0">
-        <Link className="bg-none hover:bg-none hover:text-blue-500 py-2 rounded-md" to="/categories">Categories</Link>
+        <Link className="bg-none bg-inherit hover:bg-none hover:text-blue-500 py-2 rounded-md" to="/categories">Categories</Link>
       </li>
       <li className="text-base font-medium mx-2 p-0">
-        <Link className="bg-none hover:bg-none hover:text-blue-500 py-2 rounded-md" to='/about'>About</Link>
+        <Link className="bg-none bg-inherit hover:bg-none hover:text-blue-500 py-2 rounded-md" to='/about'>About</Link>
       </li>
       <li className="text-base font-medium mx-2 p-0">
-        <Link className="bg-none hover:bg-none hover:text-blue-500 py-2 rounded-md" to='/blog'>Blog</Link>
+        <Link className="bg-none bg-inherit hover:bg-none hover:text-blue-500 py-2 rounded-md" to='/blog'>Blog</Link>
       </li>
       {user?.uid ? (
         <>
           <li className="text-base font-medium mx-2 p-0">
-            <Link className="bg-none hover:bg-none hover:text-blue-500 py-2 rounded-md" to="/dashboard">Dashboard</Link>
+            <Link className="bg-none bg-inherit hover:bg-none hover:text-blue-500 py-2 rounded-md" to="/dashboard">Dashboard</Link>
           </li>
           <li className="text-base font-medium mx-2">
-            <Link className="bg-none hover:bg-none hover:text-blue-500 py-2 rounded-md" onClick={handelLogOut}>SignOut</Link>
+            <Link className="bg-none bg-inherit hover:bg-none hover:text-blue-500 py-2 rounded-md" onClick={handelLogOut}>SignOut</Link>
           </li>
         </>
       ) : (
         <>
-          <li className="text-base text-blue-500 rounded-md font-medium  mx-2">
+          <li className="text-base bg-inherit text-blue-500 rounded-md font-medium  mx-2">
             <Link className="text-white bg-blue-500 py-2 rounded-md" to="/login"><AiOutlineLogin />Login</Link>
           </li>
         </>
