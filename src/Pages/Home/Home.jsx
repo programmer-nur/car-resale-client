@@ -7,6 +7,7 @@ import Review from "./Review";
 import SiteSummary from "./SiteSummary";
 import Supports from "./Supports";
 import Cover from "../../assets/carcover.png";
+import Started from "./Started";
 const Home = () => {
   return (
     <div>
@@ -22,6 +23,7 @@ const Home = () => {
       >
         <hr className="mx-9" />
         <Categories />
+        <Started />
       </div>
       <SiteSummary />
       <div className="py-5 bg-[#BBC6C8] relative sm:py-10 z-20">    
