@@ -71,8 +71,7 @@ const Login = () => {
       }}
     >
       <div className="font-roboto w-full flex justify-center sm:justify-between">
-        <div className="sm:w-1/2 p-5 sm:p-0 w-full flex justify-center items-center">
-          /
+        <div className="md:w-1/2 p-5 sm:p-0 w-full flex justify-center items-center">
           <div className="w-96 bg-white px-5 py-4 rounded-xl shadow-xl">
             <h3 className="text-2xl font-bold text-center py-5">Log in</h3>
             <form onSubmit={handleSubmit(handelLogin)}>
@@ -146,7 +145,7 @@ const Login = () => {
             </button>
           </div>
         </div>
-        <div className="w-1/2 hidden sm:block px-10">
+        <div className="w-1/2 hidden md:block px-10">
           <img src={loginImg} alt="" />
         </div>
       </div>
