@@ -45,8 +45,8 @@ const Navber = () => {
     </>
   );
   return (
-    <div className="bg-black sticky top-0 z-50">
-      <div className="navbar container mx-auto  text-white flex justify-between">
+    <div className="bg-black sticky font-roboto top-0 z-50">
+      <div className="navbar container mx-auto   text-white flex justify-between">
         <div className="navbar-start md:ml-8">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">

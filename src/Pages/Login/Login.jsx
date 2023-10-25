@@ -5,6 +5,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthProvider";
 import useToken from "../../hooks/useToken";
 import { AiFillGoogleCircle } from "react-icons/ai";
+import loginImg from '../../assets/Mobile login-rafiki.png'
 
 const Login = () => {
   const { createUserGoogle, logIn } = useContext(AuthContext);
@@ -62,12 +63,13 @@ const Login = () => {
     })
   }
   return (
-    <section>
-      <div className="h-[600px] flex  justify-center items-center ">
-        <div className="w-96 p-7 rounded-xl  shadow-xl bg-gray-100">
-          <h3 className="text-2xl font-bold text-center py-5">Log in</h3>
+    <section className="min-h-screen bg-cover" style={{background:`url("https://alpha-steelwork.web.app/static/media/wave.1a206bdb03501f050d60f606ac5bb1c0.svg")`,backgroundRepeat:'no-repeat',backgroundSize:'cover'}}>
+      <div className="font-roboto w-full flex justify-between">
+        <div className="w-1/2 flex justify-center items-center">/
+       <div className="w-96 bg-white px-5 py-4 rounded-xl shadow-xl">
+       <h3 className="text-2xl font-bold text-center py-5">Log in</h3>
           <form onSubmit={handleSubmit(handelLogin)}>
-            <div className="form-control w-full max-w-xs">
+            <div className="form-control w-full">
               <label className="label">
               <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
     Email
@@ -80,7 +82,7 @@ const Login = () => {
                 {...register("email", {
                   required: "Email Address is required",
                 })}
-                className="input input-bordered w-full max-w-xs"
+                className="input input-bordered w-full"
               />
               {errors.email && (
                 <p className="text-red-400 py-2" role="alert">
@@ -88,7 +90,7 @@ const Login = () => {
                 </p>
               )}
             </div>
-            <div className="form-control w-full max-w-xs">
+            <div className="form-control w-full">
               <label className="label">
               <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
     Password
@@ -104,7 +106,7 @@ const Login = () => {
                     message: "Password must be 6 charectear or longer",
                   },
                 })}
-                className="input input-bordered w-full max-w-xs"
+                className="input input-bordered w-full"
               />
               {errors.password && (
                 <p className="text-red-400 py-2" role="alert">
@@ -122,9 +124,9 @@ const Login = () => {
             />
           </form>
           <p>{error && <p className="text-red-500">{error}</p>}</p>
-          <p className="py-5">
-            New to Car Sealer?
-            <Link className="text-primary" to="/signup">
+          <p className="py-5 text-sm text-end">
+            New to Car Sealer? 
+            <Link className="text-blue-500 font-bold" to="/signup">
               Create an Account
             </Link>
           </p>
@@ -133,11 +135,15 @@ const Login = () => {
           </div>
           <button
             onClick={handelGoogleIn}
-            className="bg-gray-400 justify-center text-white rounded-md flex items-center gap-2 w-full py-3"
+            className="bg-blue-200 justify-center text-white rounded-md flex items-center gap-2 w-full py-3"
           >
             <AiFillGoogleCircle className="text-xl"/>
             Google With Connected
           </button>
+       </div>
+        </div>
+        <div className="w-1/2">
+          <img src={loginImg} alt="" />
         </div>
       </div>
     </section>
