@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { AiOutlineLogin } from "react-icons/ai";
 import logo from "../../assets/orilogo.png";
 import { AuthContext } from "../../Context/AuthProvider";
-import avater from "../../assets/avatar.png";
+import avater from "../../assets/mainava.png";
 
 const Navber = () => {
   const { user, logOut } = useContext(AuthContext);

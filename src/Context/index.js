@@ -4,7 +4,7 @@ export const reviews=[
         name:'Sinthya',
         rating:4,
         img:'https://i.ibb.co/LrzRvgL/icons8-team-Fc-Lyt7l-W5wg-unsplash.jpg',
-        des:'Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec sed odio dui. Sed posuere consectetur est at lobortis. Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed.',
+        des:"I was impressed by the variety of cars available on this website. Whether you're looking for a budget-friendly option or a high-end vehicle, there's something for everyone. The detailed descriptions and photos made it easy to compare and find the right car for me.",
         title:'C.E.O'
     },
     {
