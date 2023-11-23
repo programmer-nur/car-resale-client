@@ -22,7 +22,7 @@ const Contract = () => {
 			<label for="message" className="text-sm">Message</label>
 			<textarea id="message" rows="5" className="input input-bordered w-full"></textarea>
 		</div>
-		<button type="submit" className="btn btn-primary w-full mt-3 rounded-full text-white animate-pulse">Send Message</button>
+		<button type="submit" className="bg-blue-500 btn border-none w-full mt-3 rounded-full text-white animate-pulse">Send Message</button>
 	</form>
 </div>
     );
