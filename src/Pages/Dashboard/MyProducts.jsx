@@ -11,7 +11,7 @@ const MyProducts = () => {
   const {data:products=[],refetch,isLoading}=useQuery({
     queryKey:['myCars'],
     queryFn:async()=>{
-        const res =await fetch(`https://car-resale-server-nurmohammad83.vercel.app/myCars?email=${user?.email}`, {
+        const res =await fetch(`${process.env.REACT_APP_SERVER}/myCars?email=${user?.email}`, {
             method:'GET',
           headers: {
             authorization: `bearer ${localStorage.getItem("token")}`,
@@ -23,7 +23,7 @@ const MyProducts = () => {
   })
 
   const handelDeleting =(id)=>{
-    fetch(`https://car-resale-server-nurmohammad83.vercel.app/cars/${id}`,{
+    fetch(`${process.env.REACT_APP_SERVER}/cars/${id}`,{
       method:'DELETE',
       headers:{
         authorization:`bearer ${localStorage.getItem('token')}`
@@ -38,7 +38,7 @@ const MyProducts = () => {
     })
   }
   const handelAddv=(add)=>{
-    fetch(`https://car-resale-server-nurmohammad83.vercel.app/addv`,{
+    fetch(`${process.env.REACT_APP_SERVER}/addv`,{
       method:'POST',
       headers:{
         'content-type':'application/json'
@@ -47,8 +47,7 @@ const MyProducts = () => {
     })
     .then(res=>res.json())
     .then(data=>{
-      console.log(data);
-      toast('Addv Successfully')
+      toast('Added Successfully')
     })
   }
   if (isLoading) {

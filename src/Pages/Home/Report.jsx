@@ -4,7 +4,6 @@ import { AuthContext } from "../../Context/AuthProvider";
 
 const Report = ({report}) => {
   const { user } = useContext(AuthContext);
-  console.log(report)
   const handleSubmit = (event) =>{
     event.preventDefault()
     const form = event.target;
@@ -18,7 +17,7 @@ const Report = ({report}) => {
       message:text,
       reportId:report._id
     }
-    fetch('https://car-resale-server-nurmohammad83.vercel.app/report',{
+    fetch(`${process.env.REACT_APP_SERVER}/report`,{
       method:'post',
       headers:{
         'content-type':'application/json'

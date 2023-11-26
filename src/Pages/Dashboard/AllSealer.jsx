@@ -11,7 +11,7 @@ const AllSealer = () => {
   } = useQuery({
     queryKey: ["userSealer"],
     queryFn: async () => {
-      const res = await fetch(`https://car-resale-server-nurmohammad83.vercel.app/userSealer?role=Sealer`,{
+      const res = await fetch(`${process.env.REACT_APP_SERVER}/userSealer?role=Sealer`,{
         headers:{
           authorization: `bearer ${localStorage.getItem("token")}`,
         }
@@ -21,7 +21,7 @@ const AllSealer = () => {
     },
   });
   const handelDeleteSealer = (_id) => {
-    fetch(`https://car-resale-server-nurmohammad83.vercel.app/users/${_id}`, {
+    fetch(`${process.env.REACT_APP_SERVER}/users/${_id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -34,7 +34,7 @@ const AllSealer = () => {
   };
 
   const handelVerifyied = (id) => {
-    fetch(`https://car-resale-server-nurmohammad83.vercel.app/users/verify/${id}`, {
+    fetch(`${process.env.REACT_APP_SERVER}/users/verify/${id}`, {
       method: "PUT",
       headers: {
         authorization: `bearer ${localStorage.getItem("token")}`,
@@ -42,7 +42,6 @@ const AllSealer = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data.modifiedCount > 0) {
           toast.success("Make admin successful.");
           refetch();

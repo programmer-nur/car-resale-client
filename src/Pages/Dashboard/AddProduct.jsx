@@ -41,8 +41,8 @@ const AddProduct = () => {
             time,
         }
       
-          console.log(newProduct);
-          fetch(`https://car-resale-server-nurmohammad83.vercel.app/cars`, {
+
+          fetch(`${process.env.REACT_APP_SERVER}/cars`, {
             method: "POST",
             headers: {
               "content-type": "application/json",
@@ -52,7 +52,7 @@ const AddProduct = () => {
           })
             .then((res) => res.json())
             .then((data) => {
-              console.log(data);
+            
               if (data.acknowledged) {
                 setTime()
                 toast.success(`Order is added successfully`);

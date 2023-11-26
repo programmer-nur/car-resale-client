@@ -6,15 +6,15 @@ const ReportedItem = () => {
     const {data:reports,refetch,isLoading}=useQuery({
         queryKey:['report'],
         queryFn:async()=>{
-            const res=await fetch(`https://car-resale-server-nurmohammad83.vercel.app/reports`)
+            const res=await fetch(`${process.env.REACT_APP_SERVER}/reports`)
             const data = await res.json()
-            console.log(data);
+
             return data;
         }
     })
     
     const handelDeleting =(id)=>{
-      fetch(`https://car-resale-server-nurmohammad83.vercel.app/cars/${id}`,{
+      fetch(`${process.env.REACT_APP_SERVER}/cars/${id}`,{
         method:'DELETE',
         headers:{
           authorization:`bearer ${localStorage.getItem('token')}`

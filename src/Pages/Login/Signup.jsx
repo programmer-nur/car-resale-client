@@ -23,9 +23,7 @@ const Signup = () => {
     formState: { errors },
   } = useForm();
   const handelSignUp = (data) => {
-    console.log(data);
     createUser(data.email, data.password).then((result) => {
-      const user = result.user;
       const userInfo = {
         displayName: data.name,
       };
@@ -38,7 +36,6 @@ const Signup = () => {
         .catch((err) => {
           setError(err.message);
         });
-      console.log(user);
     });
   };
 
@@ -57,7 +54,7 @@ const Signup = () => {
 
   const saveMongodbUser = (name, email, role) => {
     const user = { name, email, role };
-    fetch(`https://car-resale-server-nurmohammad83.vercel.app/users`, {
+    fetch(`${process.env.REACT_APP_SERVER}/users`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -66,7 +63,6 @@ const Signup = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setCreateEmailUser(email);
       });
   };

@@ -13,7 +13,7 @@ const CheckOutForm = ({ order}) => {
   const { _id, productName,productPrice,email,customerName } = order
 
   useEffect(() => {
-    fetch("https://car-resale-server-nurmohammad83.vercel.app/create-payment-intent", {
+    fetch(`${process.env.REACT_APP_SERVER}/create-payment-intent`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -23,7 +23,6 @@ const CheckOutForm = ({ order}) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data?.clientSecret) {
           setClientSecret(data.clientSecret);
         }
@@ -80,7 +79,7 @@ if(paymentIntent.status === 'succeeded'){
     price:productPrice
   };
 
-  fetch(`https://car-resale-server-nurmohammad83.vercel.app/payments`, {
+  fetch(`${process.env.REACT_APP_SERVER}/payments`, {
     method: "POST",
     headers: {
       "content-type": "application/json",
@@ -90,8 +89,6 @@ if(paymentIntent.status === 'succeeded'){
   })
     .then((res) => res.json())
     .then((data) => {
-     
-      console.log(data.insertedId);
       if (data.insertedId) {
         setSuccess("Congrats! your payment completed");
         setTransactionId(paymentIntent.id);

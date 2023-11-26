@@ -27,11 +27,9 @@ const Login = () => {
   const handelLogin = (data) => {
     logIn(data.email, data.password)
       .then((res) => {
-        const user = res.user;
         setError("");
         setLoginUserEmail(data.email);
         toast("Login Successfully");
-        console.log(user);
       })
       .catch((err) => {
         setError(err.message);
@@ -49,7 +47,7 @@ const Login = () => {
 
   const saveMongodbUser = (name, email, role) => {
     const user = { name, email, role };
-    fetch(`https://car-resale-server-nurmohammad83.vercel.app/users`, {
+    fetch(`${process.env.REACT_APP_SERVER}/users`, {
       method: "POST",
       headers: {
         "content-type": "application/json",

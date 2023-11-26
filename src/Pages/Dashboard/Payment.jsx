@@ -6,11 +6,10 @@ import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import CheckOutForm from "./CheckOutForm";
 
-const stripePromise = loadStripe('pk_test_51M6C1HCTDXJg3zMmSYAsCQUtGUwLbIY1sCKbKe7eitY2RSZJAc2ABgIsYzy9MXssf5MduoDcmzZFZUzbb1GgbDel001eFdiCjw');
+const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PK);
 
 const Payment = () => {
     const order = useLoaderData([]);
-    console.log(order);
     const navigation = useNavigation()
 
   if (navigation.state === 'loading') {

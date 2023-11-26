@@ -1,7 +1,6 @@
 import { useTransform, useMotionValue, motion } from "framer-motion";
 
 const CarItem = ({ car, setModalCars, setReport }) => {
-  console.log(car)
   const {
     name,
     img,

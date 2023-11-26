@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 const useSealer =email=>{
     const [isSealer, setIsSealer]=useState(false)
     useEffect(()=>{
-        fetch(`https://car-resale-server-nurmohammad83.vercel.app/users/sealer/${email}`,{
+        fetch(`${process.env.REACT_APP_SERVER}/users/sealer/${email}`,{
             method:'GET'
         })
         .then(res=>res.json())

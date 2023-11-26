@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 const useAdmin = (email)=>{
     const [isAdmin, setAdmin]=useState(false)
     useEffect(()=>{
-        fetch(`https://car-resale-server-nurmohammad83.vercel.app/users/admin/${email}`,{
+        fetch(`${process.env.REACT_APP_SERVER}/users/admin/${email}`,{
             method:'GET'
         })
         .then(res=>res.json())

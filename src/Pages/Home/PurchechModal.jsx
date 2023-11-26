@@ -19,7 +19,7 @@ const PurchechModal = ({ modalCars,closeModel }) => {
       address: event.target.address.value,
       contact: event.target.contact.value,
     };
-    fetch("https://car-resale-server-nurmohammad83.vercel.app/orders", {
+    fetch(`${process.env.REACT_APP_SERVER}/orders`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -33,7 +33,6 @@ const PurchechModal = ({ modalCars,closeModel }) => {
           toast("Order Added");
         }
       });
-    console.log(order);
   };
 
   return (
