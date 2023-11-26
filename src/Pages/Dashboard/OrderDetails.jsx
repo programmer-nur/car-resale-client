@@ -1,14 +1,8 @@
 import React from "react";
 
 const OrderDetails = ({ order }) => {
-  const {
-    address,
-    contact,
-    email,
-    customerName,
-    productName,
-    productPrice,
-  } = order;
+  const { address, contact, email, customerName, productName, productPrice } =
+    order;
 
   return (
     <section>
@@ -72,7 +66,7 @@ const OrderDetails = ({ order }) => {
                   <span className="text-sm">: {productName}</span>
                 </td>
               </tr>
-    
+
               <tr>
                 <td>
                   <span className="text-sm font-bold">Price</span>

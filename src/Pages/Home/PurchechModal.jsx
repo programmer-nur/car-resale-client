@@ -1,12 +1,12 @@
-import { useContext} from "react";
+import { useContext } from "react";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthProvider";
 
-const PurchechModal = ({ modalCars,closeModel }) => {
+const PurchechModal = ({ modalCars, closeModel }) => {
   const { user } = useContext(AuthContext);
-  const navigation =useNavigate()
-  
+  const navigation = useNavigate();
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const order = {
@@ -29,7 +29,7 @@ const PurchechModal = ({ modalCars,closeModel }) => {
       .then((res) => res.json())
       .then((data) => {
         if (data.acknowledged) {
-          navigation('/dashboard/order')
+          navigation("/dashboard/order");
           toast("Order Added");
         }
       });

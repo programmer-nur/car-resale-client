@@ -7,7 +7,7 @@ import { AuthContext } from "../../Context/AuthProvider";
 const AddProduct = () => {
   const { user } = useContext(AuthContext);
   const [time, setTime] = useState(new Date().toISOString().slice(0, 10));
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const {
     handleSubmit,
     formState: { errors },
@@ -19,28 +19,26 @@ const AddProduct = () => {
     const image = data.img[0];
     const formData = new FormData();
     formData.append("image", image);
-    const url = `https://api.imgbb.com/1/upload?key=226a328101beecc1e23ca13cbb98984c`;
+    const url = `https://api.imgbb.com/1/upload?key=${process.env.REACT_APP_IMG}`;
     fetch(url, {
       method: "POST",
       body: formData,
     })
       .then((res) => res.json())
       .then((imgData) => {
-
         if (imgData.success) {
-          const  newProduct={
-            sealerName:user?.displayName,
-            email:user?.email,
-            category_id:data.category,
-            name:data.name,
-            location:data.location,
-            originalprice:data.originalprice,
-            condition:data.condition,
-            resaleprice:data.resaleprice,
-            img:imgData.data.url,
+          const newProduct = {
+            sealerName: user?.displayName,
+            email: user?.email,
+            category_id: data.category,
+            name: data.name,
+            location: data.location,
+            originalprice: data.originalprice,
+            condition: data.condition,
+            resaleprice: data.resaleprice,
+            img: imgData.data.url,
             time,
-        }
-      
+          };
 
           fetch(`${process.env.REACT_APP_SERVER}/cars`, {
             method: "POST",
@@ -52,27 +50,27 @@ const AddProduct = () => {
           })
             .then((res) => res.json())
             .then((data) => {
-            
               if (data.acknowledged) {
-                setTime()
+                setTime();
                 toast.success(`Order is added successfully`);
-                navigate('/dashboard/myproduct')
+                navigate("/dashboard/myproduct");
               }
             });
         }
       });
   };
-  
+
   return (
     <section className="p-4">
       <h2 className="text-3xl font-semibold text-primary my-4 ml-3">
         Add Product
       </h2>
 
-
-
-      <form className="grid sm:grid-cols-2 sm:gap-4 lg:gap-0 mx-auto" onSubmit={handleSubmit(handelAddProducts)}>
-      <div className="form-control w-full max-w-xs">
+      <form
+        className="grid sm:grid-cols-2 sm:gap-4 lg:gap-0 mx-auto"
+        onSubmit={handleSubmit(handelAddProducts)}
+      >
+        <div className="form-control w-full max-w-xs">
           <label className="label">
             <span className="label-text">Name</span>
           </label>
@@ -80,7 +78,7 @@ const AddProduct = () => {
             type="text"
             defaultValue={user?.displayName}
             disabled
-            {...register("sealerName",)}
+            {...register("sealerName")}
             className="input input-bordered w-full max-w-xs"
           />
           {errors.name && (
@@ -107,25 +105,27 @@ const AddProduct = () => {
           )}
         </div>
 
-      <div className="form-control w-full max-w-xs">
-              <label className="label">
-                <span className="label-text">Category</span>
-              </label>
-              <input
-                type="text"
-                placeholder="1,2,3 category are avialible"
-                {...register("category", {
-                  required: "Category is a requierd",
-                })}
-                className="input input-bordered w-full max-w-xs"
-              />
-              {errors.category && (
-                <p className="text-red-400 py-2" role="alert">
-                  {errors.category?.message}
-                </p>
-              )}
-            </div>
-            <div className="form-control w-full max-w-xs">
+        <div className="form-control w-full max-w-xs">
+          <label className="label">
+            <span className="label-text">Category</span>
+          </label>
+          <select
+            className="select input-bordered w-full max-w-xs"
+            {...register("category")}
+          >
+            <option selected value="1">
+              Audi
+            </option>
+            <option value="2">BMW</option>
+            <option value="3">Tesla</option>
+          </select>
+          {errors.category && (
+            <p className="text-red-400 py-2" role="alert">
+              {errors.category?.message}
+            </p>
+          )}
+        </div>
+        <div className="form-control w-full max-w-xs">
           <label className="label">
             <span className="label-text">Product Name</span>
           </label>
@@ -157,78 +157,78 @@ const AddProduct = () => {
           )}
         </div>
         <div className="form-control w-full max-w-xs">
-              <label className="label">
-                <span className="label-text">Location</span>
-              </label>
-              <input
-                type="text"
-                placeholder="Location"
-                {...register("location", {
-                  required: "Location is a requierd",
-                })}
-                className="input input-bordered w-full max-w-xs"
-              />
-              {errors.location && (
-                <p className="text-red-400 py-2" role="alert">
-                  {errors.location?.message}
-                </p>
-              )}
-            </div>
-            <div className="form-control w-full max-w-xs">
-              <label className="label">
-                <span className="label-text">Resale Price</span>
-              </label>
-              <input
-                type="number"
-                placeholder="Resale Price"
-                {...register("resaleprice", {
-                  required: "Resale Price is a requierd",
-                })}
-                className="input input-bordered w-full max-w-xs"
-              />
-              {errors.resaleprice && (
-                <p className="text-red-400 py-2" role="alert">
-                  {errors.resaleprice?.message}
-                </p>
-              )}
-            </div>
-            <div className="form-control w-full max-w-xs">
-              <label className="label">
-                <span className="label-text">Original Price</span>
-              </label>
-              <input
-                type="number"
-                placeholder="Original Price"
-                {...register("originalprice", {
-                  required: "Original Price is a requierd",
-                })}
-                className="input input-bordered w-full max-w-xs"
-              />
-              {errors.originalprice && (
-                <p className="text-red-400 py-2" role="alert">
-                  {errors.originalprice?.message}
-                </p>
-              )}
-            </div>
-            <div className="form-control w-full max-w-xs">
-              <label className="label">
-                <span className="label-text">Condition</span>
-              </label>
-              <input
-                type="number"
-                placeholder="Condition"
-                {...register("condition", { required: "Name is a requierd" })}
-                className="input input-bordered w-full max-w-xs"
-              />
-              {errors.condition && (
-                <p className="text-red-400 py-2" role="alert">
-                  {errors.condition?.message}
-                </p>
-              )}
-            </div>
+          <label className="label">
+            <span className="label-text">Location</span>
+          </label>
+          <input
+            type="text"
+            placeholder="Location"
+            {...register("location", {
+              required: "Location is a requierd",
+            })}
+            className="input input-bordered w-full max-w-xs"
+          />
+          {errors.location && (
+            <p className="text-red-400 py-2" role="alert">
+              {errors.location?.message}
+            </p>
+          )}
+        </div>
+        <div className="form-control w-full max-w-xs">
+          <label className="label">
+            <span className="label-text">Resale Price</span>
+          </label>
+          <input
+            type="number"
+            placeholder="Resale Price"
+            {...register("resaleprice", {
+              required: "Resale Price is a requierd",
+            })}
+            className="input input-bordered w-full max-w-xs"
+          />
+          {errors.resaleprice && (
+            <p className="text-red-400 py-2" role="alert">
+              {errors.resaleprice?.message}
+            </p>
+          )}
+        </div>
+        <div className="form-control w-full max-w-xs">
+          <label className="label">
+            <span className="label-text">Original Price</span>
+          </label>
+          <input
+            type="number"
+            placeholder="Original Price"
+            {...register("originalprice", {
+              required: "Original Price is a requierd",
+            })}
+            className="input input-bordered w-full max-w-xs"
+          />
+          {errors.originalprice && (
+            <p className="text-red-400 py-2" role="alert">
+              {errors.originalprice?.message}
+            </p>
+          )}
+        </div>
+        <div className="form-control w-full max-w-xs">
+          <label className="label">
+            <span className="label-text">Condition</span>
+          </label>
+          <input
+            type="number"
+            placeholder="Condition"
+            {...register("condition", { required: "Name is a requierd" })}
+            className="input input-bordered w-full max-w-xs"
+          />
+          {errors.condition && (
+            <p className="text-red-400 py-2" role="alert">
+              {errors.condition?.message}
+            </p>
+          )}
+        </div>
         <input
-          className="btn py-4 btn-accent max-w-xs mt-3 w-full"
-          value="Add Car"
+          className="btn py-4 bg-primary border-primary max-w-xs mt-3 w-full"
+          value="Add"
           type="submit"
         />
       </form>

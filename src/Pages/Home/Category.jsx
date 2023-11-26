@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import BtnPrimary from "../../Utilities/BtnPrimary";
 import { useTransform, useMotionValue, motion } from "framer-motion";
 
 const Category = ({ category }) => {
@@ -30,7 +29,9 @@ const Category = ({ category }) => {
         <h2 className="text-xl font-bold">{category.category}</h2>
         <Link to={`/categories/${category.id}`}>
           {" "}
-          <button className="py-2 hover:bg-blue-700 px-5 font-semibold text-white bg-blue-500 rounded-md">More</button>
+          <button className="py-2 hover:bg-blue-700 px-5 font-semibold text-white bg-blue-500 rounded-md">
+            More
+          </button>
         </Link>
       </div>
     </motion.div>

@@ -11,11 +11,14 @@ const AllSealer = () => {
   } = useQuery({
     queryKey: ["userSealer"],
     queryFn: async () => {
-      const res = await fetch(`${process.env.REACT_APP_SERVER}/userSealer?role=Sealer`,{
-        headers:{
-          authorization: `bearer ${localStorage.getItem("token")}`,
+      const res = await fetch(
+        `${process.env.REACT_APP_SERVER}/userSealer?role=Sealer`,
+        {
+          headers: {
+            authorization: `bearer ${localStorage.getItem("token")}`,
+          },
         }
-      });
+      );
       const data = await res.json();
       return data;
     },

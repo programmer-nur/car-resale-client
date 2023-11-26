@@ -1,5 +1,5 @@
 import React from "react";
-import { useLoaderData, useNavigation,  } from "react-router-dom";
+import { useLoaderData, useNavigation } from "react-router-dom";
 import Loading from "../Shared/Loading";
 import OrderDetails from "./OrderDetails";
 import { loadStripe } from "@stripe/stripe-js";
@@ -9,10 +9,10 @@ import CheckOutForm from "./CheckOutForm";
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PK);
 
 const Payment = () => {
-    const order = useLoaderData([]);
-    const navigation = useNavigation()
+  const order = useLoaderData([]);
+  const navigation = useNavigation();
 
-  if (navigation.state === 'loading') {
+  if (navigation.state === "loading") {
     return <Loading></Loading>;
   }
 
@@ -23,10 +23,7 @@ const Payment = () => {
       </h2>
       <div className="grid sm:grid-cols-2 gap-4">
         <div className="order-details">
-          <OrderDetails
-            key={order._id}
-            order={order}
-          ></OrderDetails>
+          <OrderDetails key={order._id} order={order}></OrderDetails>
         </div>
         <div className="payment-stripe">
           <div className="card max-w-sm bg-base-100 hover:shadow-lg">

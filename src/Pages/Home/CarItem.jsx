@@ -1,5 +1,3 @@
-import { useTransform, useMotionValue, motion } from "framer-motion";
-
 const CarItem = ({ car, setModalCars, setReport }) => {
   const {
     name,
@@ -8,7 +6,7 @@ const CarItem = ({ car, setModalCars, setReport }) => {
     sealerName,
     resaleprice,
     originalprice,
-    location
+    location,
   } = car;
   return (
     <div
@@ -24,13 +22,20 @@ const CarItem = ({ car, setModalCars, setReport }) => {
           <p className="text-base text-gray-500/95">Location: {location}</p>
           <p className="sm:text-sm md:text-base text-gray-500/95 flex justify-between items-center">
             <span>Seller: {sealerName}</span>
-            <span>Used: {condition} {condition === '1' ? 'Year':'Years'}</span>
-            </p>
+            <span>
+              Used: {condition} {condition === "1" ? "Year" : "Years"}
+            </span>
+          </p>
           <p className="sm:text-sm md:text-base text-gray-500/95 flex lg:justify-between lg:items-center flex-col lg:flex-row">
-            <span>Reseal Price: <span className="text-blue-500 md:font-semibold">${resaleprice}</span></span>
+            <span>
+              Reseal Price:{" "}
+              <span className="text-blue-500 md:font-semibold">
+                ${resaleprice}
+              </span>
+            </span>
             <span>Original Price: ${originalprice}</span>
           </p>
-         
+
           <div className="card-actions pt-2 items-center justify-between">
             <button>
               <label

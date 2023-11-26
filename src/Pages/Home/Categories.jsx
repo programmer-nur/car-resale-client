@@ -1,20 +1,21 @@
-import { useQuery } from '@tanstack/react-query';
-import Loading from '../Shared/Loading';
-import Category from './Category';
+import { useQuery } from "@tanstack/react-query";
+import Loading from "../Shared/Loading";
+import Category from "./Category";
 
 const Categories = () => {
-    
-   const {data:categories =[],isLoading}=useQuery({
-    queryKey:['categories'],
-    queryFn:async()=>{
-        const res=await fetch(`${process.env.REACT_APP_SERVER}/categories`)
-        const data =await res.json()
-        return data
-    }
-   })
-    return (
-        <section className="container w-full py-5 md:py-12 mx-auto">
-      <h2 className="text-5xl mx-3 text-center font-semibold my-4">Categories</h2>
+  const { data: categories = [], isLoading } = useQuery({
+    queryKey: ["categories"],
+    queryFn: async () => {
+      const res = await fetch(`${process.env.REACT_APP_SERVER}/categories`);
+      const data = await res.json();
+      return data;
+    },
+  });
+  return (
+    <section className="container w-full py-5 md:py-12 mx-auto">
+      <h2 className="text-5xl mx-3 text-center font-semibold my-4">
+        Categories
+      </h2>
 
       {isLoading ? (
         // Render loading state
@@ -28,7 +29,7 @@ const Categories = () => {
         </div>
       )}
     </section>
-    );
+  );
 };
 
 export default Categories;

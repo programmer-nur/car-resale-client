@@ -11,17 +11,15 @@ const Home = () => {
   return (
     <div className="bg-[#dfedf0]">
       <Banner />
-      <div
-        className="py-5 sm:py-10"
-      >
+      <div className="py-5 sm:py-10">
         <Supports />
         <Categories />
         <Started />
       </div>
       <SiteSummary />
-      <div className="py-5 bg-[#dfedf0] relative sm:py-10 z-20">  
-          <OurWork />  
-        <Review />   
+      <div className="py-5 bg-[#dfedf0] relative sm:py-10 z-20">
+        <OurWork />
+        <Review />
         <Contract />
       </div>
     </div>

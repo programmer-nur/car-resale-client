@@ -6,20 +6,23 @@ import Loading from "../Shared/Loading";
 
 const MyOrders = () => {
   const { user } = useContext(AuthContext);
-  const { data: orders,isLoading } = useQuery({
+  const { data: orders, isLoading } = useQuery({
     queryKey: ["orders"],
     queryFn: async () => {
-      const res = await fetch(`${process.env.REACT_APP_SERVER}/orders?email=${user?.email}`,{
-              headers:{
-                authorization:`bearer ${localStorage.getItem('token')}`
-              }
-      });
+      const res = await fetch(
+        `${process.env.REACT_APP_SERVER}/orders?email=${user?.email}`,
+        {
+          headers: {
+            authorization: `bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      );
       const data = await res.json();
-            return data;
+      return data;
     },
   });
-  if(isLoading){
-    <Loading/>
+  if (isLoading) {
+    <Loading />;
   }
   return (
     <div className="m-3">
@@ -41,41 +44,44 @@ const MyOrders = () => {
               </tr>
             </thead>
             <tbody>
-              {
-              orders?.length &&
-              orders?.map((order, i) => (
-                <tr key={i}>
-                  <th>
-                    <label>
-                      <span>{i + 1}</span>
-                    </label>
-                  </th>
-                  <td>
-                    <div className="flex items-center space-x-3">
-                      <div className="avatar">
-                        <div className="mask mask-squircle w-12 h-12">
-                          <img
-                            src={order?.productImg}
-                            alt="Avatar Tailwind CSS Component"
-                          />
+              {orders?.length &&
+                orders?.map((order, i) => (
+                  <tr key={i}>
+                    <th>
+                      <label>
+                        <span>{i + 1}</span>
+                      </label>
+                    </th>
+                    <td>
+                      <div className="flex items-center space-x-3">
+                        <div className="avatar">
+                          <div className="mask mask-squircle w-12 h-12">
+                            <img
+                              src={order?.productImg}
+                              alt="Avatar Tailwind CSS Component"
+                            />
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </td>
-                  <td>{order?.productName}</td>
-                  <td>${order?.productPrice}</td>
-                  <td>
-                  {order?.productPrice && !order?.paid && (
-                    <Link to={`/dashboard/payment/${order._id}`}>
-                      <button className="py-1 px-4 bg-blue-500 hover:bg-blue-700 text-white font-semibold rounded-md">Pay</button>
-                    </Link>
-                  )}
-                  {order?.productPrice && order?.paid && (
-                    <span className="text-green-50 bg-accent p-1 rounded-md">Paid</span>
-                  )}
-                  </td>
-                </tr>
-              ))}
+                    </td>
+                    <td>{order?.productName}</td>
+                    <td>${order?.productPrice}</td>
+                    <td>
+                      {order?.productPrice && !order?.paid && (
+                        <Link to={`/dashboard/payment/${order._id}`}>
+                          <button className="py-1 px-4 bg-blue-500 hover:bg-blue-700 text-white font-semibold rounded-md">
+                            Pay
+                          </button>
+                        </Link>
+                      )}
+                      {order?.productPrice && order?.paid && (
+                        <span className="text-green-50 bg-accent p-1 rounded-md">
+                          Paid
+                        </span>
+                      )}
+                    </td>
+                  </tr>
+                ))}
             </tbody>
           </table>
         </div>

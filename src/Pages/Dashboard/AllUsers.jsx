@@ -6,10 +6,10 @@ const AllUsers = () => {
   const { data: users, isLoading } = useQuery({
     queryKey: ["users"],
     queryFn: async () => {
-      const res = await fetch(`${process.env.REACT_APP_SERVER}/users`,{
-        headers:{
+      const res = await fetch(`${process.env.REACT_APP_SERVER}/users`, {
+        headers: {
           authorization: `bearer ${localStorage.getItem("token")}`,
-        }
+        },
       });
       const data = await res.json();
       return data;

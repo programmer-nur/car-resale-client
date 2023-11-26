@@ -23,21 +23,22 @@ const CarItems = () => {
       className="container my-5 w-full mx-auto
         px-9"
     >
-      <h2 className="text-5xl font-bold py-5 sm:py-10 text-center">Our Services</h2>
+      <h2 className="text-5xl font-bold py-5 sm:py-10 text-center">
+        Our Services
+      </h2>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-9">
-        {
-        cars.length &&
-        cars?.map((car) => (
-          <CarItem
-            key={car._id}
-            car={car}
-            setReport={setReport}
-            setModalCars={setModalCars}
-          />
-        ))}
+        {cars.length &&
+          cars?.map((car) => (
+            <CarItem
+              key={car._id}
+              car={car}
+              setReport={setReport}
+              setModalCars={setModalCars}
+            />
+          ))}
       </div>
       {modalCars && (
-        <PurchechModal  closeModal={closeModal} modalCars={modalCars} />
+        <PurchechModal closeModal={closeModal} modalCars={modalCars} />
       )}
       {<Report report={report} />}
     </section>

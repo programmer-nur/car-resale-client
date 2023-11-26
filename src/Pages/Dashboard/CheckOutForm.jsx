@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 
-const CheckOutForm = ({ order}) => {
+const CheckOutForm = ({ order }) => {
   const stripe = useStripe();
   const elements = useElements();
   const [clientSecret, setClientSecret] = useState("");
@@ -10,7 +10,7 @@ const CheckOutForm = ({ order}) => {
   const [transactionId, setTransactionId] = useState("");
   const [processing, setProcessing] = useState(false);
 
-  const { _id, productName,productPrice,email,customerName } = order
+  const { _id, productName, productPrice, email, customerName } = order;
 
   useEffect(() => {
     fetch(`${process.env.REACT_APP_SERVER}/create-payment-intent`, {
@@ -70,34 +70,33 @@ const CheckOutForm = ({ order}) => {
       setSuccess("Congratulations! Your payment has been successful");
       setTransactionId(paymentIntent.id);
     }
-if(paymentIntent.status === 'succeeded'){
-  const payment = {
-    orderId: _id,
-    transactionId: paymentIntent.id,
-    customerName: customerName,
-    productName:productName,
-    price:productPrice
-  };
+    if (paymentIntent.status === "succeeded") {
+      const payment = {
+        orderId: _id,
+        transactionId: paymentIntent.id,
+        customerName: customerName,
+        productName: productName,
+        price: productPrice,
+      };
 
-  fetch(`${process.env.REACT_APP_SERVER}/payments`, {
-    method: "POST",
-    headers: {
-      "content-type": "application/json",
-      authorization: `bearer ${localStorage.getItem("accessToken")}`,
-    },
-    body: JSON.stringify(payment),
-  })
-    .then((res) => res.json())
-    .then((data) => {
-      if (data.insertedId) {
-        setSuccess("Congrats! your payment completed");
-        setTransactionId(paymentIntent.id);
-        setProcessing(false);
-      }
-    });
-}
+      fetch(`${process.env.REACT_APP_SERVER}/payments`, {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+          authorization: `bearer ${localStorage.getItem("accessToken")}`,
+        },
+        body: JSON.stringify(payment),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.insertedId) {
+            setSuccess("Congrats! your payment completed");
+            setTransactionId(paymentIntent.id);
+            setProcessing(false);
+          }
+        });
+    }
     // store payment on database
-   
   };
 
   return (
