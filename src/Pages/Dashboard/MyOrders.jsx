@@ -69,7 +69,7 @@ const MyOrders = () => {
                     <td>
                       {order?.productPrice && !order?.paid && (
                         <Link to={`/dashboard/payment/${order._id}`}>
-                          <button className="py-1 px-4 bg-blue-500 hover:bg-blue-700 text-white font-semibold rounded-md">
+                          <button className="py-1 px-4 bg-[#937B92] hover:bg-[#8c488c] text-white font-semibold rounded-md">
                             Pay
                           </button>
                         </Link>

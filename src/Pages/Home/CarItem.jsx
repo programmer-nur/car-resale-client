@@ -29,7 +29,7 @@ const CarItem = ({ car, setModalCars, setReport }) => {
           <p className="sm:text-sm md:text-base text-gray-500/95 flex lg:justify-between lg:items-center flex-col lg:flex-row">
             <span>
               Reseal Price:{" "}
-              <span className="text-blue-500 md:font-semibold">
+              <span className="text-[#937B92] md:font-semibold">
                 ${resaleprice}
               </span>
             </span>
@@ -52,7 +52,7 @@ const CarItem = ({ car, setModalCars, setReport }) => {
             >
               <label
                 htmlFor="booking-modal"
-                className="inline-block cursor-pointer border  bg-blue-500  hover:bg-blue-700 sm:px-8 sm:py-3 px-5 py-2  text-white  text-sm font-medium rounded-md"
+                className="inline-block cursor-pointer border  bg-[#937B92]  hover:bg-[#8c488c] sm:px-8 sm:py-3 px-5 py-2  text-white  text-sm font-medium rounded-md"
                 onClick={() => setModalCars(car)}
               >
                 Purchase

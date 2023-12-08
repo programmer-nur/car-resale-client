@@ -62,7 +62,7 @@ const AddProduct = () => {
 
   return (
     <section className="p-4">
-      <h2 className="text-3xl font-semibold text-primary my-4 ml-3">
+      <h2 className="text-3xl font-semibold text-[#937B92] mb-4">
         Add Product
       </h2>
 
@@ -145,11 +145,7 @@ const AddProduct = () => {
           <label className="label">
             <span className="label-text">Photo</span>
           </label>
-          <input
-            type="file"
-            {...register("img", { required: "Photo is a requierd" })}
-            className="input input-bordered w-full max-w-xs"
-          />
+          <input type="file" {...register("img", { required: "Photo is a required" })} className="file-input file-input-bordered file-input-[#937B92] w-full max-w-xs" />
           {errors.img && (
             <p className="text-red-400 py-2" role="alert">
               {errors.img?.message}
@@ -227,7 +223,7 @@ const AddProduct = () => {
           )}
         </div>
         <input
-          className="btn py-4 bg-primary border-primary max-w-xs mt-3 w-full"
+          className="btn py-4 bg-[#937B92] hover:bg-[#9d5b9a] border-[#937B92] hover:border-[#9d5b9a] max-w-xs mt-3 w-full"
           value="Add"
           type="submit"
         />

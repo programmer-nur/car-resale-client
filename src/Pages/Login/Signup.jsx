@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import useToken from "../../hooks/useToken";
 import { Link, useNavigate } from "react-router-dom";
-import loginImg from "../../assets/Mobile login-rafiki.png";
+import loginImg from "../../assets/loginimg.png";
 import { AuthContext } from "../../Context/AuthProvider";
 import { AiFillGoogleCircle } from "react-icons/ai";
 
@@ -169,7 +169,7 @@ const Signup = () => {
                 </label>
               </div>
               <input
-                className="py-2 mt-3 cursor-pointer bg-gradient-to-r to-black/70 from-blue-500  rounded-md text-white font-semibold w-full"
+                className="py-2 mt-3 cursor-pointer bg-gradient-to-r to-black/70 from-[#937B92]  rounded-md text-white font-semibold w-full"
                 value="Sign Up"
                 type="submit"
               />
@@ -177,7 +177,7 @@ const Signup = () => {
             </form>
             <p className="py-5 text-sm">
               New to Car Sealer?
-              <Link className="text-blue-500 font-bold" to="/login">
+              <Link className="text-[#937B92] font-bold" to="/login">
                 Already have an account?
               </Link>
             </p>
@@ -186,7 +186,7 @@ const Signup = () => {
             </div>
             <button
               onClick={handelGoogleIn}
-              className="bg-blue-100/90 justify-center text-blue-500 rounded-md flex items-center gap-2 w-full py-3"
+              className="bg-blue-100/90 justify-center text-[#937B92] rounded-md flex items-center gap-2 w-full py-3"
             >
               <AiFillGoogleCircle className="text-xl" />
               Continue With Google

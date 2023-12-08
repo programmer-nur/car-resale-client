@@ -12,7 +12,7 @@ const OrderDetails = ({ order }) => {
             <tbody>
               <tr>
                 <td>
-                  <span className="font-bold text-primary">
+                  <span className="font-bold text-[#937B92]">
                     Customer Details
                   </span>
                 </td>
@@ -55,7 +55,7 @@ const OrderDetails = ({ order }) => {
               </tr>
               <tr>
                 <td className="pt-8">
-                  <span className="font-bold text-primary">Order Details</span>
+                  <span className="font-bold text-[#937B92]">Order Details</span>
                 </td>
               </tr>
               <tr>

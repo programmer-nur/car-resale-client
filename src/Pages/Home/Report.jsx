@@ -67,7 +67,7 @@ const Report = ({ report }) => {
                 <label>
                   <input
                     htmlFor="booking-modal"
-                    className="bg-blue-500 hover:bg-blue-700 px-5 py-2 cursor-pointer w-full rounded-md text-white max-w-xs block font-semibold mb-2"
+                    className="bg-[#937B92] hover:bg-[#9c339c] px-5 py-2 cursor-pointer w-full rounded-md text-white max-w-xs block font-semibold mb-2"
                     type="submit"
                     value="Report"
                   />

@@ -6,14 +6,10 @@ import { motion } from "framer-motion";
 const OurWork = () => {
   return (
     <section className="p-6 font-roboto text-gray-100">
-      <motion.h3
-        initial={{ opacity: 0, scale: 0 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8 }}
-        className="text-center text-black text-5xl"
-      >
-        What We Do
-      </motion.h3>
+        <div className="text-center py-4 sm:py-12">
+        <h2 className="text-3xl mb-2 font-semibold">Use Case</h2>
+        <p>What you do</p>
+      </div>
       <div className="container grid grid-cols-1 py-6 sm:py-16 gap-6 mx-auto sm:grid-cols-2 xl:grid-cols-4">
         <div className="flex p-4 space-x-4 rounded-lg md:space-x-6 bg-gray-900 text-gray-100">
           <div className="flex justify-center p-2 items-center align-middle rounded-lg sm:p-4 bg-gray-100">

@@ -96,7 +96,6 @@ const CheckOutForm = ({ order }) => {
           }
         });
     }
-    // store payment on database
   };
 
   return (
@@ -119,7 +118,7 @@ const CheckOutForm = ({ order }) => {
           }}
         />
         <button
-          className="btn btn-primary btn-sm rounded-full w-1/2 mx-auto block text-white mt-4"
+          className="btn btn-[#937B92] btn-sm rounded-full w-1/2 mx-auto block text-white mt-4"
           type="submit"
           disabled={!stripe || !clientSecret || success}
         >

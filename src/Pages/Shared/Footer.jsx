@@ -14,14 +14,9 @@ const Footer = () => {
         }}
         aria-label="Site Footer"
       >
-        <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
-          <Link
-            to="/"
-            class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900"
-          >
-            <span class="ml-3 text-xl">
-              Car <span className="text-blue-700">Resale</span>
-            </span>
+        <div class="container font-poppins px-6 py-8 mx-auto flex items-center sm:flex-row flex-col">
+        <Link to="/" className="mr-5 text-xl">
+            <span className="uppercase font-bold">Car-<span className="text-[#937B92]">Resale</span></span>
           </Link>
           <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
             © 2023 Car Resale —
@@ -37,7 +32,7 @@ const Footer = () => {
           <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
             <a
               href="https://web.facebook.com/nurmohammad54800"
-              class="text-gray-500"
+              class="text-blue-500"
             >
               <svg
                 fill="currentColor"
@@ -52,7 +47,7 @@ const Footer = () => {
             </a>
             <a
               href="https://www.instagram.com/noor__5480/"
-              class="ml-3 text-gray-500"
+              class="ml-3 text-[#f82a8a]"
             >
               <svg
                 fill="none"
@@ -68,8 +63,8 @@ const Footer = () => {
               </svg>
             </a>
             <a
-              href="https://www.linkedin.com/in/nur-mohammad-0a1137259/"
-              class="ml-3 text-gray-500"
+              href="https://www.linkedin.com/in/programmer-nur/"
+              class="ml-3 text-blue-700"
             >
               <svg
                 fill="currentColor"

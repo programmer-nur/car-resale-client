@@ -18,7 +18,7 @@ const Payment = () => {
 
   return (
     <section>
-      <h2 className="text-3xl font-semibold text-primary my-4 ml-3">
+      <h2 className="text-3xl font-semibold text-[#937B92] my-4 ml-3">
         Complete Payment
       </h2>
       <div className="grid sm:grid-cols-2 gap-4">
@@ -26,7 +26,7 @@ const Payment = () => {
           <OrderDetails key={order._id} order={order}></OrderDetails>
         </div>
         <div className="payment-stripe">
-          <div className="card max-w-sm bg-base-100 hover:shadow-lg">
+          <div className="card max-w-sm bg-base-100 shadow-lg">
             <div className="card-body">
               <Elements stripe={stripePromise}>
                 <CheckOutForm order={order} />

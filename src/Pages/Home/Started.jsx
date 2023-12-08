@@ -8,28 +8,27 @@ import "react-vertical-timeline-component/style.min.css";
 // icons
 import shuttle from "../../assets/shuttle.png";
 import arrow from "../../assets/arrow.png";
-import arrow2 from "../../assets/arrow-2.png";
-import finish from "../../assets/finish.png";
+import finish from "../../assets/finish1.png";
 import done from "../../assets/done.png";
-import tips from "../../assets/tips.png";
-import thankYou from "../../assets/thank-you.png";
+import thankYou from "../../assets/thank.png";
 import StartedIcons from "./StartedIcons/StartedIcons";
 
 const Started = () => {
   return (
-    <section className="py-32 mx-auto">
-      <h2 className="text-5xl font-semibold text-center lg:mb-8">
-        Get Started
-      </h2>
+    <section style={{backgroundImage:"url(https://assets-global.website-files.com/64e4a47477bc12449a13a52c/64ef828fa7b5db06ae374ac1_Mask%20Group%201.svg)",backgroundColor:"#F7F2F7",backgroundPosition:"center",backgroundRepeat:"no-repeat"}} className="py-5 sm:py-10 mx-auto">
+       <div className="text-center py-4 sm:py-12">
+        <h2 className="text-3xl mb-2 font-semibold">Get Started</h2>
+        <p>Let's get started</p>
+      </div>
       <div className="react-timeline">
         <VerticalTimeline>
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
-            contentStyle={{ background: "#107ef6", color: "black" }}
-            contentArrowStyle={{ borderRight: "7px solid  #107ef6" }}
+            contentStyle={{ background: "#937B92", color: "black" }}
+            contentArrowStyle={{ borderRight: "7px solid  #937B92" }}
             date="Step 1"
             iconStyle={{
-              background: "#107ef6",
+              background: "#937B92",
               color: "#fff",
               display: "flex",
               justifyContent: "center",
@@ -75,33 +74,33 @@ const Started = () => {
 
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
-            contentStyle={{ background: "#fff", color: "black" }}
-            contentArrowStyle={{ borderRight: "7px solid  #ffffff" }}
+            contentStyle={{ background: "#937B92", color: "black" }}
+            contentArrowStyle={{ borderRight: "7px solid  #937B92" }}
             iconStyle={{
-              background: "#fff",
+              background: "#937B92",
               color: "#fff",
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
             }}
             date="Step 3"
-            icon={<StartedIcons icon={arrow2} />}
+            icon={<StartedIcons icon={arrow} />}
           >
-            <h3 className="vertical-timeline-element-title text-#107ef6] font-semibold text-xl sm:text-2xl">
+            <h3 className="vertical-timeline-element-title text-white font-semibold text-xl sm:text-2xl">
               Dashboard
             </h3>
-            <h3 className="text-#107ef6] sm:text-xl pt-3">
+            <h3 className="text-white sm:text-xl pt-3">
               Click Dashboard on the menu
             </h3>
           </VerticalTimelineElement>
 
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
-            contentStyle={{ background: "#107ef6", color: "black" }}
-            contentArrowStyle={{ borderRight: "7px solid  #107ef6" }}
+            contentStyle={{ background: "#232F3C", color: "black" }}
+            contentArrowStyle={{ borderRight: "7px solid  #232F3C" }}
             date="Step 4"
             iconStyle={{
-              background: "#107ef6",
+              background: "#232F3C",
               color: "#fff",
               display: "flex",
               justifyContent: "center",
@@ -121,10 +120,10 @@ const Started = () => {
 
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
-            contentStyle={{ background: "#232F3C", color: "#232F3C" }}
-            contentArrowStyle={{ borderRight: "7px solid  #232F3C" }}
+            contentStyle={{ background: "#937B92", color: "#937B92" }}
+            contentArrowStyle={{ borderRight: "7px solid  #937B92" }}
             iconStyle={{
-              background: "#232F3C",
+              background: "#937B92",
               color: "#fff",
               display: "flex",
               justifyContent: "center",
@@ -144,10 +143,10 @@ const Started = () => {
 
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
-            contentStyle={{ background: "#fff", color: "black" }}
-            contentArrowStyle={{ borderRight: "7px solid  #107ef6" }}
+            contentStyle={{ background: "#232F3C", color: "black" }}
+            contentArrowStyle={{ borderRight: "7px solid  #232F3C" }}
             iconStyle={{
-              background: "#fff",
+              background: "#232F3C",
               color: "#fff",
               display: "flex",
               justifyContent: "center",
@@ -157,10 +156,10 @@ const Started = () => {
             date="Step 6"
             icon={<StartedIcons icon={finish} />}
           >
-            <h3 className="vertical-timeline-element-title text-#107ef6] font-semibold text-xl sm:text-2xl">
+            <h3 className="vertical-timeline-element-title text-white font-semibold text-xl sm:text-2xl">
               Complete Payment
             </h3>
-            <h3 className="text-#107ef6] sm:text-xl pt-3">
+            <h3 className="text-white sm:text-xl pt-3">
               You can pay using any type of card (e.g. Visa card, Master Card,
               American Card etc)
             </h3>
@@ -168,11 +167,11 @@ const Started = () => {
 
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
-            contentStyle={{ background: "#107ef6", color: "black" }}
-            contentArrowStyle={{ borderRight: "7px solid  #107ef6" }}
+            contentStyle={{ background: "#937B92", color: "black" }}
+            contentArrowStyle={{ borderRight: "7px solid  #937B92" }}
             date="Done"
             iconStyle={{
-              background: "#107ef6",
+              background: "#937B92",
               color: "#fff",
               display: "flex",
               justifyContent: "center",
@@ -201,34 +200,10 @@ const Started = () => {
               alignItems: "center",
             }}
             date="Pro Tips"
-            icon={<StartedIcons icon={tips} />}
-          >
-            <h3 className="text-white">
-              <li className="sm:text-xl">
-                You can edit your profile on Profile section
-              </li>
-              <li className="sm:text-xl">
-                You can leave a review on Add A Review section
-              </li>
-            </h3>
-          </VerticalTimelineElement>
-
-          <VerticalTimelineElement
-            className="vertical-timeline-element--work"
-            contentStyle={{ background: "#fff", color: "black" }}
-            contentArrowStyle={{ borderRight: "7px solid  #ffffff" }}
-            iconStyle={{
-              background: "#fff",
-              color: "#fff",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              transform: "scaleX(-1)",
-            }}
             icon={<StartedIcons icon={thankYou} />}
           >
-            <h3 className="text-#107ef6] sm:text-xl">
-              Thank you for buying from us!
+             <h3 className="text-white sm:text-xl">
+              Thank you for visiting us!
             </h3>
           </VerticalTimelineElement>
         </VerticalTimeline>

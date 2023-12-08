@@ -21,9 +21,26 @@ body {
     #bef3f3 91.61%
   );
 }
-
+.bg-img-to-up{
+  display: grid;
+    place-items: center;
+    background-color: white;
+    height: calc(100% - 100px);
+    font-size: 0.9375;
+    background-image: url("assets/bg-pattern-top-desktop.svg"),
+    url("assets/bg-pattern-bottom-desktop.svg");
+    background-position: top left, bottom right;
+    background-repeat: no-repeat no-repeat;
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+@media screen and (max-width:650px) {
+  .bg-img-to-up{
+        height: auto;
+        background-image: url(assets/bg-pattern-bottom-desktop.svg);
+        background-position: -10vh 0vw;
+  }
 }

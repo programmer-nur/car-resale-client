@@ -2,9 +2,9 @@ import React, { useContext } from "react";
 import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 import { AiOutlineLogin } from "react-icons/ai";
-import logo from "../../assets/orilogo.png";
+import logo from "../../assets/mainlog.png";
 import { AuthContext } from "../../Context/AuthProvider";
-import avater from "../../assets/mainava.png";
+import avater from "../../assets/ava.png";
 
 const Navber = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -17,7 +17,7 @@ const Navber = () => {
     <>
       <li className="text-base font-medium mx-2 p-0">
         <Link
-          className="bg-none bg-inherit hover:bg-none hover:text-blue-500 py-2 rounded-md"
+          className="bg-none bg-inherit hover:bg-none hover:text-[#937B92] py-2 rounded-md"
           to="/"
         >
           Home
@@ -25,7 +25,7 @@ const Navber = () => {
       </li>
       <li className="text-base font-medium mx-2 p-0">
         <Link
-          className="bg-none bg-inherit hover:bg-none hover:text-blue-500 py-2 rounded-md"
+          className="bg-none bg-inherit hover:bg-none hover:text-[#937B92] py-2 rounded-md"
           to="/categories"
         >
           Categories
@@ -33,7 +33,7 @@ const Navber = () => {
       </li>
       <li className="text-base font-medium mx-2 p-0">
         <Link
-          className="bg-none bg-inherit hover:bg-none hover:text-blue-500 py-2 rounded-md"
+          className="bg-none bg-inherit hover:bg-none hover:text-[#937B92] py-2 rounded-md"
           to="/about"
         >
           About
@@ -41,7 +41,7 @@ const Navber = () => {
       </li>
       <li className="text-base font-medium mx-2 p-0">
         <Link
-          className="bg-none bg-inherit hover:bg-none hover:text-blue-500 py-2 rounded-md"
+          className="bg-none bg-inherit hover:bg-none hover:text-[#937B92] py-2 rounded-md"
           to="/blog"
         >
           Blog
@@ -51,8 +51,8 @@ const Navber = () => {
         <>
           <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-              <div className="w-10 rounded-full">
-                <img src={avater} alt="avater" />
+              <div className="w-10 border-white  rounded-full">
+                <img src={avater} className="w-6 h-6" alt="avater" />
               </div>
             </label>
             <ul
@@ -61,7 +61,7 @@ const Navber = () => {
             >
               <li className="text-base font-medium p-0">
                 <Link
-                  className="hover:bg-gray-100 bg-inherit w-full hover:text-blue-500 py-2 rounded-md"
+                  className="hover:bg-gray-100 bg-inherit w-full hover:text-[#937B92] text-white py-2 rounded-md"
                   to="/dashboard"
                 >
                   Dashboard
@@ -69,7 +69,7 @@ const Navber = () => {
               </li>
               <li className="text-base w-full font-medium">
                 <Link
-                  className="hover:bg-gray-100 bg-inherit w-full hover:text-blue-500 py-2 rounded-md"
+                  className="hover:bg-gray-100 text-white bg-inherit w-full hover:text-[#937B92] py-2 rounded-md"
                   onClick={handelLogOut}
                 >
                   SignOut
@@ -80,9 +80,9 @@ const Navber = () => {
         </>
       ) : (
         <>
-          <li className="text-base bg-inherit text-blue-500 rounded-md font-medium  mx-2">
+          <li className="text-base bg-inherit text-[#937B92] rounded-md font-medium  mx-2">
             <Link
-              className="text-white bg-blue-500 py-2 rounded-md"
+              className="text-white bg-[#937B92] hover:bg-[#8c488c] py-2 rounded-md"
               to="/login"
             >
               <AiOutlineLogin />
@@ -94,8 +94,8 @@ const Navber = () => {
     </>
   );
   return (
-    <div className="bg-black sticky font-roboto top-0 z-50">
-      <div className="navbar container mx-auto   text-white flex justify-between">
+    <div className="bg-[#F7F2F7] sticky font-roboto top-0 z-50">
+      <div className="navbar container mx-auto   text-black flex justify-between">
         <div className="navbar-start md:ml-8">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -116,13 +116,13 @@ const Navber = () => {
             </label>
             <ul
               tabIndex={1}
-              className="menu p-0 menu-compact dropdown-content shadow bg-black"
+              className="menu p-5 menu-compact dropdown-content shadow bg-white"
             >
               {menuItems}
             </ul>
           </div>
           <Link to="/" className="mr-5 text-xl">
-            <img src={logo} className="mr-5" alt="" />
+            <span className="uppercase font-bold">Car-<span className="text-[#937B92]">Resale</span></span>
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">

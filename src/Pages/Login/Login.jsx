@@ -5,7 +5,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthProvider";
 import useToken from "../../hooks/useToken";
 import { AiFillGoogleCircle } from "react-icons/ai";
-import loginImg from "../../assets/Mobile login-rafiki.png";
+import loginImg from "../../assets/loginimg.png";
 
 const Login = () => {
   const { createUserGoogle, logIn } = useContext(AuthContext);
@@ -119,7 +119,7 @@ const Login = () => {
                 )}
               </div>
               <input
-                className=" py-2 mt-3 cursor-pointer bg-gradient-to-r to-black/70 from-blue-500  rounded-md text-white font-semibold w-full"
+                className=" py-2 mt-3 cursor-pointer bg-gradient-to-r to-black/70 from-[#937B92]  rounded-md text-white font-semibold w-full"
                 value="Log In"
                 type="submit"
               />
@@ -127,7 +127,7 @@ const Login = () => {
             <p>{error && <p className="text-red-500">{error}</p>}</p>
             <p className="py-5 text-sm text-end">
               New to Car Sealer?
-              <Link className="text-blue-500 font-bold" to="/signup">
+              <Link className="text-[#937B92] font-bold" to="/signup">
                 Create an Account
               </Link>
             </p>
@@ -136,7 +136,7 @@ const Login = () => {
             </div>
             <button
               onClick={handelGoogleIn}
-              className="bg-blue-100/90 justify-center text-blue-500 rounded-md flex items-center gap-2 w-full py-3"
+              className="bg-blue-100/90 justify-center text-[#937B92] rounded-md flex items-center gap-2 w-full py-3"
             >
               <AiFillGoogleCircle className="text-xl" />
               Continue With Google
