@@ -13,7 +13,7 @@ const Banner = () => {
 			</h1>
 			<p className="mt-6 text-black/50 mb-6 sm:text-base text-lg sm:mb-10">Unlock the Secrets of Smart Resale at WheelWisdom - Where Every Mile Counts Toward Value
 			</p>
-			<div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
+			<div>
 				<Link to={'/categories'}><BtnPrimary>GET Started</BtnPrimary></Link>
 			</div>
 		</div>

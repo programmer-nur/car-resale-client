@@ -49,9 +49,9 @@ const Navber = () => {
       </li>
       {user?.uid ? (
         <>
-          <div className="dropdown dropdown-end">
+          <div className="dropdown  sm:dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-              <div className="w-10 border-white  rounded-full">
+              <div className="w-10 border-white rounded-full">
                 <img src={avater} className="w-6 h-6" alt="avater" />
               </div>
             </label>
