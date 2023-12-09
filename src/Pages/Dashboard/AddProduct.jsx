@@ -3,8 +3,17 @@ import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthProvider";
+import { useQuery } from "@tanstack/react-query";
 
 const AddProduct = () => {
+  const { data: categories = [] } = useQuery({
+    queryKey: ["categories"],
+    queryFn: async () => {
+      const res = await fetch(`${process.env.REACT_APP_SERVER}/categories`);
+      const data = await res.json();
+      return data;
+    },
+  })
   const { user } = useContext(AuthContext);
   const [time, setTime] = useState(new Date().toISOString().slice(0, 10));
   const navigate = useNavigate();
@@ -16,6 +25,7 @@ const AddProduct = () => {
 
   // const imgHostKey =process.env.REACT_APP_IMGBB_API
   const handelAddProducts = (data) => {
+
     const image = data.img[0];
     const formData = new FormData();
     formData.append("image", image);
@@ -113,11 +123,11 @@ const AddProduct = () => {
             className="select input-bordered w-full max-w-xs"
             {...register("category")}
           >
-            <option selected value="1">
-              Audi
-            </option>
-            <option value="2">BMW</option>
-            <option value="3">Tesla</option>
+            {
+              categories.map(cat=>(
+                <option key={cat._id} value={cat.id}>{cat.category}</option>
+              ))
+            }
           </select>
           {errors.category && (
             <p className="text-red-400 py-2" role="alert">
